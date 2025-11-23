@@ -332,12 +332,15 @@ spacer[part="overflow-end-indicator"] {
         transition: var(--pf-ts-15) !important;
       }
     }
-    &[collapsed] > .tabbrowser-tab:not([selected]) {
+    &[collapsed] > .tabbrowser-tab:not([selected], [busy]) {
       display: unset !important;
       min-height: 0;
       max-height: 0;
       opacity: 0;
       pointer-events: none;
+    }
+    &[collapsed] .tabbrowser-tab[busy] {
+      display: unset !important;
     }
   }
   .tab-group-label-container {
