@@ -16,16 +16,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   max-width: var(--pf-toolbaritem-size);
   max-height: var(--pf-toolbaritem-size);
   padding: 0 !important;
-
-  &:not(.webextension-browser-action) {
-    & > .toolbarbutton-icon {
-      width: calc(2 * var(--toolbarbutton-inner-padding) + var(--pf-icon-size)) !important;
-      height: calc(2 * var(--toolbarbutton-inner-padding) + var(--pf-icon-size)) !important;
-    }
-    & > .toolbarbutton-badge-stack > .toolbarbutton-icon {
-      width: var(--pf-icon-size) !important;
-    }
-  }
+  
   & .toolbarbutton-icon {
     transition: var(--pf-ts-25);
     transition-timing-function: var(--pf-fx-bounce) !important;

@@ -72,7 +72,7 @@
 
         #urlbar:hover & {
           width: calc(var(--urlbar-min-height) - 2px - 2 * var(--urlbar-container-padding)) !important;
-          padding-inline: 2px !important;
+          padding-inline: var(--urlbar-icon-padding) !important;
           opacity: 1;
         }
       }
@@ -273,7 +273,7 @@
         align-items: center;
         color: color-mix(in srgb, var(--pf-text-color), transparent 50%);
         background-image: none !important;
-        font-size: 13px !important;
+        font-size: 1.075rem !important;
         margin-inline-start: auto !important;
         padding-inline-end: 8px !important;
         visibility: visible !important;
@@ -281,15 +281,11 @@
         
         &::after {
           content: "";
-          width: var(--pf-icon-size-large);
-          height: var(--pf-icon-size-large);
+          width: 24px;
+          height: 24px;
           margin-inline-start: 8px;
-          display: flex;
-          background-color: var(--pf-toolbar-bgcolor);
-          background-image: var(--pf-icon-arrow-right-short);
-          fill: var(--pf-text-color);
-          background-position: center;
-          background-repeat: no-repeat;
+          background: center no-repeat var(--pf-icon-arrow-right-short), var(--pf-toolbar-bgcolor);
+          color: var(--pf-text-color);
           border-radius: calc(var(--pf-urlbar-result-radius) - 4px);
         }
       }
@@ -331,7 +327,8 @@
       border-radius: 4px;
       
       &[src^="chrome://"] {
-        opacity: 0.75;
+        fill: var(--pf-icon-color);
+        fill-opacity: 0.75;
       }
       &[src="chrome://global/skin/icons/search-glass.svg"] {
         content: var(--pf-icon-search);
@@ -362,10 +359,6 @@
     fill: var(--pf-icon-color) !important;
     --urlbar-icon-fill-opacity: 1;
   }
-  & .urlbar-page-action {
-    align-items: center;
-    justify-content: center;
-  }
   & #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, a.extensionPage) > .identity-box-button {
     padding-inline: var(--urlbar-icon-padding) !important;
   }
@@ -375,10 +368,6 @@
     list-style-image: url("chrome://devtools/skin/images/alert.svg") !important;
     fill: light-dark(var(--color-red-50), var(--color-red-30));
   }
-  .urlbar-go-button,
-  .search-go-button {
-    list-style-image: var(--pf-icon-arrow-right-short) !important;
-  }
   & .urlbar-page-action,
   & .urlbar-revert-button,
   & .urlbar-go-button,
@@ -386,6 +375,10 @@
   & #tracking-protection-icon-container,
   & #identity-box {
     margin-block: 2px;
+  }
+  & .urlbar-go-button,
+  & .search-go-button {
+    list-style-image: var(--pf-icon-arrow-right-short) !important;
   }
   & #taskbar-tabs-button > .urlbar-icon {
     list-style-image: var(--pf-icon-install) !important;
@@ -410,6 +403,7 @@
     --urlbar-box-bgcolor: transparent;
     --urlbar-box-focus-bgcolor: transparent;
     
+    &[open],
     &:hover {
       background-color: var(--pf-toolbar-bgcolor-hover) !important;
     }
