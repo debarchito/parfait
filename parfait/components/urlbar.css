@@ -34,6 +34,7 @@
         left: var(--pf-urlbar-x) !important;
         top: var(--pf-urlbar-y) !important;
         width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
+        max-width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
         height: var(--pf-urlbar-height) !important;
                 
         /* normal urlbar */
@@ -328,10 +329,11 @@
       
       &[src^="chrome://"] {
         fill: var(--pf-icon-color);
-        fill-opacity: 0.75;
+        fill-opacity: 1;
       }
       &[src="chrome://global/skin/icons/search-glass.svg"] {
         content: var(--pf-icon-search);
+        fill-opacity: 0.75;
       }
     }
     & .urlbarView-button {

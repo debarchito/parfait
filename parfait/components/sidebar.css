@@ -483,7 +483,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #stop-reload-button,
     #vertical-spacer::before,
     #urlbar-container::before,
-    #urlbar:not([open]) {
+    &:has(#sidebar-main:hover) #urlbar:not([open]) {
       transition: all var(--pf-ts-25) !important;
       transition-timing-function: var(--pf-fx-sidebar) !important;
     }
