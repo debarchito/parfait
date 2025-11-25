@@ -528,7 +528,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       &:has(
         #sidebar-main:hover, #vertical-spacer:hover, #sidebar-button:hover,
         #back-button:hover, #forward-button:hover, #stop-reload-button:hover,
-        .tabbrowser-tab:is([pendingicon], [multiselected]):not([selected]),
+        .tabbrowser-tab[multiselected]:not([selected]),
         .tab-group-editor-panel[panelopen="true"], #tabgroup-preview-panel[panelopen="true"],
         #urlbar:not([open]) :is(:hover,
           #tracking-protection-icon-container[open], .identity-box-button[open],
@@ -561,7 +561,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       &:has(
         #sidebar-main:hover, #vertical-spacer:hover, #sidebar-button:hover,
         #back-button:hover, #forward-button:hover, #stop-reload-button:hover,
-        .tabbrowser-tab:is([pendingicon], [multiselected]):not([selected]),
+        .tabbrowser-tab[multiselected]:not([selected]),
         .tab-group-editor-panel[panelopen="true"], #tabgroup-preview-panel[panelopen="true"],
         .titlebar-buttonbox-container:hover,
         #urlbar:not([open]) :is(:hover,
