@@ -186,7 +186,6 @@ notification-message {
   --panel-background: var(--arrowpanel-background) !important;
   --panel-color: var(--toolbox-color) !important;
   --panel-border-radius: var(--pf-border-radius) !important;
-  --panel-width: fit-content !important;
 }
 .ctrlTab-preview,
 #ctrlTab-showAll {

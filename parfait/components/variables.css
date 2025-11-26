@@ -64,6 +64,7 @@
   --pf-sidebar-bgcolor-1: light-dark(rgb(248, 248, 248), rgb(21, 21, 21));
   --pf-sidebar-bgcolor-2: light-dark(rgb(248, 248, 248), rgb(21, 21, 21));
   --pf-panel-bgcolor: light-dark(rgb(255, 255, 255), rgb(21, 21, 21));
+  --pf-panel-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.925));
   --pf-text-color: color-mix(in srgb, var(--toolbar-color), transparent 20%);
   --pf-text-color-inactive: color-mix(in srgb, var(--toolbar-color), transparent 50%);
   --pf-icon-color: light-dark(rgba(91, 91, 102, 0.9), rgba(251, 251, 254, 0.8));

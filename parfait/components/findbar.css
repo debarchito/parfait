@@ -10,7 +10,7 @@
   right: 16px;
   width: var(--pf-findbar-width);
   padding-block: 0 !important;
-  background-color: light-dark(#fff, #222) !important;
+  background-color: var(--pf-panel-bgcolor) !important;
   border: 1px solid var(--pf-border-color) !important;
   border-radius: var(--pf-border-radius);
   box-shadow: var(--pf-shadow-medium) !important;
@@ -21,29 +21,23 @@
     display: flex !important;
     top: -100px;
   }
+  @media -moz-pref("parfait.blur.enabled") {
+    backdrop-filter: var(--pf-acrylic-filter);
+    --pf-panel-bgcolor: var(--pf-panel-bgcolor-transparent);
+  }
   & .findbar-container {
     flex-wrap: wrap;
     margin-left: 0 !important;
     min-height: 40px;
     height: 100% !important;
-    
-    @media -moz-pref("parfait.findbar.simple") {
-      max-height: 40px;
-      transition: max-height var(--pf-ts-25) !important;
-      overflow: hidden;
-      
-      &:hover {
-        max-height: 80px;
-      }
-    }
   }
   & .findbar-closebutton {
     position: absolute;
     top: 8px;
     right: 8px;
     margin: 0 !important;
-    width: 24px !important;
-    height: 24px !important;
+    min-width: 24px;
+    min-height: 24px;
   }
   & hbox[anonid="findbar-textbox-wrapper"] {
     width: var(--pf-findbar-width) !important;
@@ -64,13 +58,6 @@
       width: 24px;
       height: 24px;
       margin: 0 !important;
-      padding: 0 !important;
-      align-items: center !important;
-      justify-content: center !important;
-      
-      & .toolbarbutton-text {
-        display: none;
-      }
     }
   }
   & checkbox {
@@ -80,9 +67,6 @@
       background-color: var(--pf-toolbar-bgcolor-hover);
     }
     & .checkbox-label-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border-radius: var(--pf-border-radius-xsmall);
     }
     &[checked] .checkbox-label-box {
@@ -92,35 +76,30 @@
       width: 24px;
       height: 24px;
       margin: 0 !important;
-      padding: 4px !important;
+      padding: 4px;
       display: block !important;
-      background-color: var(--pf-text-color);
-      mask-position: center;
-      mask-repeat: no-repeat;
+      fill: var(--pf-text-color);
+      -moz-context-properties: fill;
+      
+      .findbar-highlight & {
+        content: var(--pf-icon-search-highlight);
+      }
+      .findbar-case-sensitive  & {
+        content: var(--pf-icon-search-matchcase);
+      }
+      .findbar-match-diacritics & {
+        content: var(--pf-icon-search-matchdiacritics);
+      }
+      .findbar-entire-word & {
+        content: var(--pf-icon-search-matchwholeword);
+      }
     }
     &.findbar-highlight {
       margin-left: 8px !important;
     }
-    &.findbar-highlight .checkbox-icon {
-      mask-image: var(--pf-icon-search-highlight);
-    }
-    &.findbar-case-sensitive  .checkbox-icon {
-      mask-image: var(--pf-icon-search-matchcase);
-    }
-    &.findbar-match-diacritics  .checkbox-icon {
-      mask-image: var(--pf-icon-search-matchdiacritics);
-    }
-    &.findbar-entire-word .checkbox-icon {
-      mask-image: var(--pf-icon-search-matchwholeword);
-    }
-    .checkbox-check,
-    .checkbox-label {
-      display: none;
-    }
   }
-  & .findbar-label {
-    padding-block: 8px;
-  }
+  & .checkbox-check,
+  & .checkbox-label,
   & .findbar-find-status[data-l10n-id="findbar-wrapped-to-top"] {
     display: none;
   }
