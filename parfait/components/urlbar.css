@@ -323,6 +323,19 @@
         }
       }
     }
+    /* sr: calculator, unit conversion */
+    &:is([dynamicType="calculator"], [dynamicType="unitConversion"]) {
+      min-height: var(--pf-urlbar-result-height) !important;
+      
+      & .urlbarView-dynamic-calculator-input,
+      & .urlbarView-dynamic-unitConversion-output {
+        font-weight: 600;
+      }
+      & .urlbarView-dynamic-calculator-action::before,
+      & .urlbarView-dynamic-unitConversion-action::before {
+        content: "\2013" !important;
+      }
+    }
     /* sr: icons */
     & .urlbarView-favicon {
       border-radius: 4px;
@@ -334,6 +347,9 @@
       &[src="chrome://global/skin/icons/search-glass.svg"] {
         content: var(--pf-icon-search);
         fill-opacity: 0.75;
+      }
+      &[src="chrome://global/skin/icons/edit-copy.svg"] {
+        content: var(--pf-icon-copy);
       }
     }
     & .urlbarView-button {
