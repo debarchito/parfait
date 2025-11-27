@@ -27,7 +27,7 @@
       }
     }
     /* mini urlbar */
-    @media -moz-pref("parfait.toolbar.unified-sidebar") {
+    @media -moz-pref("parfait.toolbar.unified-sidebar") and (not -moz-pref("sidebar.visibility", "expand-on-hover")) {
       & #urlbar:not([open]),
       & #urlbar-container::before {
         position: fixed !important;
@@ -36,21 +36,15 @@
         width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
         max-width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
         height: var(--pf-urlbar-height) !important;
-                
-        /* normal urlbar */
-        @media -moz-pref("sidebar.visibility", "expand-on-hover") {
-          left: unset !important;
-          right: unset !important;
-          top: unset !important;
+      }
+    }
+    @media -moz-pref("sidebar.visibility", "always-show") {
+      &:has(#tabbrowser-tabs:not([expanded])) {
+        & #urlbar:not([open]),
+        & #urlbar-container::before {
+          inset: unset !important;
           width: var(--urlbar-width) !important;
-        }
-        @media -moz-pref("sidebar.visibility", "always-show") {
-          :root:has(#tabbrowser-tabs:not([expanded])) & {
-            left: unset !important;
-            right: unset !important;
-            top: unset !important;
-            width: var(--urlbar-width) !important;
-          }
+          max-width: unset !important;
         }
       }
     }
@@ -165,7 +159,7 @@
             height: 100%;
             position: absolute;
             animation: searchbar-expand var(--pf-ts-65);
-            border-radius: var(--pf-border-radius);
+            border-radius: var(--pf-urlbar-fl-radius);
           }
         }
       }
@@ -235,11 +229,7 @@
       }
     }
     /* sr: type */
-    &:is(
-      [type="history_serp"], [type="autofill_url"],
-      [type="top_site"], [type="bookmark"],
-      [type="history"], [type="autofill_origin"]
-    ) {
+    &:is([type="history_serp"], [type="autofill_url"], [type="top_site"], [type="bookmark"], [type="history"], [type="autofill_origin"]) {
       & .urlbarView-title-separator {
         display: flex !important;
         opacity: 0.5;
@@ -459,12 +449,11 @@
       margin-inline: 0 !important;
       opacity: 0;
       transition: var(--pf-ts-15);
-      
-      & .searchmode-switcher-chicklet:hover & {
-        width: 16px !important;
-        margin-inline: 4px 0 !important;
-        opacity: 1;
-      }
+    }
+    &:hover .searchmode-switcher-close {
+      width: 16px !important;
+      margin-inline: 4px -4px !important;
+      opacity: 1;
     }
   }
 }
