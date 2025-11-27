@@ -71,6 +71,9 @@
     width: 40px !important;
     height: 40px !important;
   }
+  .top-site-outer .title {
+    font-family: inherit !important;
+  }
   .top-site-outer .context-menu-button {
     top: 6px !important;
     right: 16px !important;
