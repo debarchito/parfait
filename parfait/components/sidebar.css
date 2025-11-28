@@ -96,21 +96,6 @@
 #tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
 #sidebar-launcher-splitter { display: none !important; }
 
-/* sidebar: collapsed mode */
-#tabbrowser-tabs:not([expanded]) {
-  --tab-collapsed-background-width: var(--pf-tab-height);
-  
-  .tab-group-label-container {
-    margin-inline: 0 !important;
-  }
-  .tab-group-label {
-    min-width: var(--pf-tab-height) !important;
-    
-    &::before { margin-inline: 3px; }
-    &::after { left: 9px; }
-  }
-}
-
 /* sidebar 2 */
 @media -moz-pref("sidebar.verticalTabs") {
   #sidebar-box,

@@ -23,8 +23,7 @@
     width: calc(100% - (var(--pf-separation) * 4));
     position: absolute;
     border-top: 1px solid var(--sidebar-border-color);
-    left: 50%;
-    transform: translateX(-50%);
+    margin-inline: calc(var(--pf-separation) * 2);
   }
 }
 #vertical-tabs-newtab-button {
@@ -44,22 +43,28 @@
     border-top: 1px solid var(--sidebar-border-color);
     transition: var(--pf-ts-15);
   }
-  :root:has([overflowing][scrolledtoend]) &::before {
+  #tabbrowser-tabs:has(> [overflowing][scrolledtoend]) &::before {
     width: calc(100% - (var(--pf-separation) * 2));
   }
 }
 
 /* tabs: overflow */
-spacer[part="overflow-start-indicator"],
-spacer[part="overflow-end-indicator"] {
+spacer[part="overflow-start-indicator"] {
   background-image: none !important;
   border-top: 1px solid var(--sidebar-border-color);
 }
-spacer[part="overflow-end-indicator"] {
-  visibility: hidden;
-}
+spacer[part="overflow-end-indicator"],
 #tabbrowser-tabs[orient="vertical"]::after {
-  display: none;
+  visibility: collapse;
+}
+
+/* tabs: collapsed mode */
+#tabbrowser-tabs[orient="vertical"]:not([expanded]) {
+  --tab-collapsed-background-width: var(--pf-tab-height);
+  
+  .tab-group-label {
+    min-width: var(--pf-tab-height) !important;
+  }
 }
 
 /* tabs: pinned tabs */
@@ -85,7 +90,7 @@ spacer[part="overflow-end-indicator"] {
         }
       }
       & .tab-content[titlechanged] {
-        background-position-x: calc(100% - 8px) !important;
+        background-position: calc(100% - 8px) 8px !important;
       }
     }
   }
@@ -163,6 +168,16 @@ spacer[part="overflow-end-indicator"] {
       --tab-selected-bgcolor: var(--pf-toolbar-bgcolor-hover);
       box-shadow: none !important;
     }
+    &:not([selected], [multiselected]) {
+      transition: var(--pf-ts-15);
+    }
+  }
+  & .tab-stack {
+    transition: scale var(--pf-ts-15);
+    
+    .tabbrowser-tab[selected]:hover:active & {
+      scale: 0.985;
+    }
   }
   & .tab-content {
     padding-inline: calc(var(--tab-inline-padding) + var(--pf-separation) - 8px) !important;
@@ -188,43 +203,31 @@ spacer[part="overflow-end-indicator"] {
 }
 
 /* tabs: containers */
-@media -moz-pref("sidebar.verticalTabs") {
-  .tabbrowser-tab[usercontextid] {
-    &:not([pinned]) {
-      & .tab-context-line {
-        display: none;
-      }
-      .tab-icon-stack::before {
-        content: "";
-        width: 24px;
-        height: 24px;
-        display: block;
-        position: absolute;
-        left: -4px;
-        top: -4px;
-        background: color-mix(in srgb, var(--identity-icon-color), transparent 90%);
-        border: 1px dashed color-mix(in srgb, var(--identity-icon-color), transparent 70%);
-        border-radius: var(--pf-border-radius-small);
-        box-sizing: border-box;
-        position: absolute;
-      }
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[usercontextid] {
+  & .tab-context-line {
+    opacity: 0.75;
+    transition: var(--pf-ts-25);
+  }
+  &:not([pinned]) {
+    & .tab-context-line {
+      order: 1;
+      margin-block: calc(var(--tab-border-radius) / 0.5) !important;
     }
-    &[pinned] {
-      & .tab-context-line {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 3px;
-        width: 16px !important;
-        height: 2px !important;
-        margin: 0 !important;
-        transition: var(--pf-ts-25);
-      }
-      &[selected] {
-        & .tab-context-line {
-          width: calc(100% - (var(--pf-border-radius) * 4)) !important;
-        }
-      }
+    &[selected] .tab-context-line {
+      margin-block: calc(var(--tab-border-radius) / 0.875) !important;
+    }
+  }
+  &[pinned] {
+    & .tab-background {
+      flex-direction: column-reverse !important;
+    }
+    & .tab-context-line {
+      width: auto !important;
+      height: 2px !important;
+      margin: 0 calc(var(--tab-border-radius) / 0.4) !important;
+    }
+    &[selected] .tab-context-line {
+      margin-inline: calc(var(--tab-border-radius) / 0.6) !important;
     }
   }
 }
@@ -247,6 +250,7 @@ spacer[part="overflow-end-indicator"] {
     box-shadow: none !important;
     outline: none !important;
     color: var(--pf-text-color) !important;
+    transition: var(--pf-ts-15) !important;
     --tab-border-radius: var(--pf-border-radius);
     
     /* folder colors */
