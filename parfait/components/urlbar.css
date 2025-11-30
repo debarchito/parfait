@@ -37,6 +37,8 @@
         max-width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
         height: var(--pf-urlbar-height) !important;
       }
+      /* allow top bar dragging */
+      & #urlbar-container { -moz-window-dragging: drag; }
     }
     @media -moz-pref("sidebar.visibility", "always-show") {
       &:has(#tabbrowser-tabs:not([expanded])) {
@@ -90,8 +92,6 @@
       & .search-go-button {
         display: none;
       }
-      /* allow top bar dragging */
-      & #urlbar-container { -moz-window-dragging: drag; }
     }
     /* floating urlbar */
     & #urlbar[open] {
