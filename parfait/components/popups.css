@@ -121,6 +121,18 @@
 panel toolbarseparator {
   --panel-separator-color: color-mix(in srgb, currentColor 12%, transparent);
 }
+/* windows 11: mica panels */
+@media (-moz-windows-mica-popups) {
+  panel:not(#ctrlTab-panel) {
+    transition: none !important;
+    appearance: auto !important;
+    -moz-default-appearance: menupopup;
+    --panel-background: var(--pf-panel-bgcolor-transparent) !important;
+    --panel-border-color: transparent !important;
+    --panel-shadow-margin: 0 !important;
+    --panel-border-radius: 0 !important;
+  }
+}
 /* context menu: icons */
 #protections-popup-mainView .subviewbutton-nav:not(.notFound),
 .widget-overflow-list .subviewbutton-nav,
