@@ -338,7 +338,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           display: flex !important;
         }
         & .tab-throbber,
-        & .tab-icon-image {
+        &:not([soundplaying]) .tab-icon-image {
           margin-inline-end: 10px;
         }
         & .tab-close-button {
@@ -365,7 +365,13 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       width: unset !important;
       max-width: unset !important;
       font-size-adjust: unset !important;
-      
+    }
+    .tab-icon-overlay[soundplaying] {
+      display: none;
+    }
+    .tab-audio-button[soundplaying] {
+      display: flex !important;
+      margin-left: 2px;
     }
     .tab-group-label-container,
     .tab-group-line {

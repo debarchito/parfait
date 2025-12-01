@@ -213,6 +213,12 @@ spacer[part="overflow-end-indicator"],
     
     &:hover:active { scale: 0.9175; }
   }
+  .tab-icon-overlay[soundplaying] {
+    list-style-image: var(--pf-icon-audio-12) !important;
+  }
+  .tab-icon-overlay[muted] {
+    list-style-image: var(--pf-icon-audio-mute-12) !important;
+  }
   /* tabs: hide close button */
   & .tabbrowser-tab[visuallyselected]:not([pinned]) {
     & .tab-close-button { display: none !important; }
