@@ -13,8 +13,11 @@
     &:has(#tabbrowser-tabs:not([expanded])) {
       @media not -moz-pref("sidebar.visibility", "hide-sidebar") {
         --pf-topbar-margin: 0;
-        --pf-bookmarks-margin: var(--pf-sidebar-collapsed);
+        --pf-bookmarks-margin: calc(var(--pf-sidebar-collapsed) + var(--pf-separation));
         
+        @media -moz-pref("parfait.window.borderless") {
+          --pf-bookmarks-margin: calc(var(--pf-sidebar-collapsed) + (var(--pf-separation) * 2));
+        }
         :is(#tabbrowser-tabbox, #sidebar-box) {
           transition-delay: 0s !important;
         }
@@ -65,6 +68,9 @@
             --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
           }
         }
+      }
+      @media -moz-pref("parfait.window.borderless") {
+        --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + (var(--pf-separation) * 2));
       }
     }
     @media -moz-pref("sidebar.visibility", "expand-on-hover") {
@@ -242,7 +248,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 /* floating sidebar */
 @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
   :root:has(#tabbrowser-tabs:not([expanded])) {
-    --pf-bookmarks-margin: var(--pf-browser-separation);
+    --pf-bookmarks-margin: calc(var(--pf-separation) * 2);
     
     /* sidebar */
     #sidebar-main {
