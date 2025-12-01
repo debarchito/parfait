@@ -110,7 +110,7 @@ spacer[part="overflow-end-indicator"],
     padding-block: 0 !important;
     
     & .tab-icon-image {
-      transition: var(--pf-ts-15) !important;
+      transition: scale var(--pf-ts-15), opacity var(--pf-ts-15) !important;
     }
     /* tabs: title changed */
     .tab-label-container {
@@ -172,10 +172,13 @@ spacer[part="overflow-end-indicator"],
       transition: var(--pf-ts-15);
     }
   }
+  & .tabbrowser-tab[selected]:not([pinned]) .tab-background {
+    animation: tab-select var(--pf-ts-25) var(--pf-fx-bounce);
+  }
   & .tab-stack {
     transition: scale var(--pf-ts-15);
     
-    .tabbrowser-tab[selected]:hover:active & {
+    .tabbrowser-tab[selected]:hover:active:not(:has(.tab-audio-button:active, .tab-close-button:active)) & {
       scale: 0.985;
     }
   }
@@ -201,12 +204,16 @@ spacer[part="overflow-end-indicator"],
     &:is(:hover) .tab-close-button { display: block !important; }
   }
 }
+@keyframes tab-select {
+  0%   { scale: 1.025 1.125; }
+  100% { scale: 1; }
+}
 
 /* tabs: containers */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[usercontextid] {
   & .tab-context-line {
     opacity: 0.75;
-    transition: var(--pf-ts-25);
+    transition: var(--pf-ts-50) var(--pf-fx-bounce);
   }
   &:not([pinned]) {
     & .tab-context-line {
