@@ -8,7 +8,7 @@
 <p align="center">A tasty theme modification for Firefox 🦊</p>
 
 <p align="center">
-  <img width="1920" src="https://github.com/user-attachments/assets/48a4a24c-ceec-4d8b-9d29-bbd5ef52cb37" alt="Three browser windows showcasing the features of Parfait; from top to bottom, compact mode, floating sidebar, and unified sidebar">
+  <img width="1920" src="https://github.com/user-attachments/assets/9d532a0b-a3c2-4d49-812a-68e1c8cb5fbb" alt="Three browser windows stacked diagonally showcasing the features of Parfait; from top to bottom, compact mode, floating sidebar, and unified sidebar">
 </p>
 
 <p align="center">
