@@ -6,7 +6,7 @@
 /* top bar */
 @media -moz-pref("sidebar.verticalTabs") {
   #tabbrowser-tabbox, #sidebar-box {
-    transition-delay: var(--pf-ts-15) !important;
+    transition-delay: var(--pf-topbar-delay) !important;
   }
   /* check sidebar state */
   :root {
@@ -18,8 +18,13 @@
         @media -moz-pref("parfait.window.borderless") {
           --pf-bookmarks-margin: calc(var(--pf-sidebar-collapsed) + (var(--pf-separation) * 2));
         }
-        :is(#tabbrowser-tabbox, #sidebar-box) {
-          transition-delay: 0s !important;
+        #tabbrowser-tabbox, #sidebar-box {
+          --pf-topbar-delay: 0s;
+        }
+      }
+      @media -moz-pref("parfait.toolbar.unified-sidebar") and -moz-pref("sidebar.visibility", "hide-sidebar") {
+        #tabbrowser-tabpanels {
+          margin-top: var(--pf-topbar-margin-reverse);
         }
       }
     }
@@ -38,7 +43,8 @@
       #nav-bar:hover, #downloads-button[notification]:not([hidden])
     ) :is(#tabbrowser-tabbox, #sidebar-box, #sidebar-splitter) {
       margin-top: 0 !important;
-      transition-delay: 0s !important;
+      --pf-topbar-delay: 0s;
+      --pf-topbar-margin-reverse: calc(var(--pf-browser-separation) - var(--pf-topbar-height));
     }
     /* auto hide navbar */
     @media -moz-pref("parfait.toolbar.unified-sidebar") {
@@ -51,10 +57,20 @@
       &:not([inDOMFullscreen]) :is(#tabbrowser-tabbox, #sidebar-box, #sidebar-splitter) {
         margin-top: var(--pf-topbar-margin) !important;
         transition: margin-top var(--pf-ts-25);
+        --pf-topbar-margin-reverse: 0;
       }
+    }
+    #tabbrowser-tabpanels {
+      transition: margin-top var(--pf-ts-25);
+      transition-delay: var(--pf-topbar-delay);
     }
     /* sidebar button gutter */
     &:has(#tabbrowser-tabs[expanded]) {
+      @media -moz-pref("parfait.toolbar.unified-sidebar") {
+        #tabbrowser-tabpanels {
+          margin-top: var(--pf-topbar-margin-reverse);
+        }
+      }
       @media -moz-pref("parfait.toolbar.sidebar-gutter") {
         --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
 
@@ -98,12 +114,10 @@
     }
     .wrapper { width: 100% !important; }
   }
-}
-#tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
-#sidebar-launcher-splitter { display: none !important; }
-
-/* sidebar 2 */
-@media -moz-pref("sidebar.verticalTabs") {
+  #tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
+  #sidebar-launcher-splitter { display: none !important; }
+  
+  /* sidebar 2 */
   #sidebar-box,
   :root:has(#tabbrowser-tabs[expanded]) #sidebar-splitter {
     padding-block-end: var(--pf-browser-separation) !important;
@@ -123,7 +137,6 @@
     transition: var(--pf-ts-25) !important;
   }
 }
-
 
 /* customize sidebar */
 @-moz-document url("chrome://browser/content/sidebar/sidebar-customize.html") {
@@ -433,7 +446,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     /* fs: keep navbar out of the way :) */
     #nav-bar {
       transition: top var(--pf-ts-25) !important;
-      transition-delay: var(--pf-ts-15) !important;
+      transition-delay: var(--pf-topbar-delay) !important;
       z-index: 4;
       
       @media not -moz-pref("parfait.window.borderless") {

@@ -171,6 +171,9 @@
   --pf-fx-sidebar: cubic-bezier(0.125, 1.125, 0.25, 1.0125);
   --pf-fx-folder: cubic-bezier(0.42, 0, 0, 1);
   
+  /* timings */
+  --pf-topbar-delay: 0.15s;
+  
   /* firefox */
   --border-radius-medium: var(--pf-border-radius) !important;
   --urlbar-icon-border-radius: var(--pf-border-radius-small) !important;
