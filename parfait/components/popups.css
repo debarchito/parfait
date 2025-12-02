@@ -121,8 +121,8 @@
 panel toolbarseparator {
   --panel-separator-color: color-mix(in srgb, currentColor 12%, transparent);
 }
-/* windows 11: mica panels */
-@media (-moz-windows-mica-popups) {
+/* native panels */
+@media (-moz-platform: macos) or (-moz-windows-mica-popups) {
   panel:not(#ctrlTab-panel) {
     transition: none !important;
     appearance: auto !important;
