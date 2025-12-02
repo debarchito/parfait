@@ -143,6 +143,14 @@ panel toolbarseparator {
   }
 }
 
+/* tabs list */
+.all-tabs-mute-button[soundplaying] {
+  list-style-image: var(--pf-icon-audio-12) !important;
+}
+.all-tabs-mute-button[muted] {
+  list-style-image: var(--pf-icon-audio-mute-12) !important;
+}
+
 /* tab groups preview */
 #tabgroup-panel-content {
   max-width: var(--pf-tab-group-preview-width);
