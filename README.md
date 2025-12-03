@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img width="1000" src="https://github.com/user-attachments/assets/03371cd4-3400-4492-8067-bf6b522f09ac" alt="Demonstration of Parfait theme showing its features">
+  <img width="1000" src="https://github.com/user-attachments/assets/96c36fec-b62b-41f3-802d-333535d4cccd" alt="Demonstration of Parfait theme showing its features">
 </p>
 
 ## Getting started
