@@ -33,6 +33,13 @@
   }
 }
 
+/* macos: window transparency */
+:root {
+  @media (-moz-platform: macos) and (not (prefers-reduced-transparency)) {
+    appearance: -moz-sidebar !important;
+  }
+}
+
 /* lwt theming */
 :root[lwtheme] {
   --pf-accent-color: var(--toolbarbutton-icon-fill);
