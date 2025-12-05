@@ -290,7 +290,8 @@ spacer[part="overflow-end-indicator"],
     &:-moz-window-inactive {
       color: var(--pf-text-inactive-color) !important;
     }
-    #tabbrowser-tabs[movingtab-group] tab-group:has(.tab-group-label[dragover-groupTarget]) &,
+    tab-group:has(.tab-group-label[dragover-groupTarget]) &,
+    tab-group[previewpanelactive] &,
     &:hover {
       background-color: var(--tab-hover-background-color) !important;
     }
@@ -329,7 +330,7 @@ spacer[part="overflow-end-indicator"],
       background-size: 8px;
       fill-opacity: 1;
     }
-    #tabbrowser-tabs[movingtab-group] tab-group:has(.tab-group-label[dragover-groupTarget]) &,
+    tab-group:has(.tab-group-label[dragover-groupTarget]) &,
     &[aria-expanded="true"] {
       &::before { transform: skewX(16deg) scale(.85); }
       &::after { transform: skewX(-16deg) scale(.85) translate(4.5px, 0px); }
