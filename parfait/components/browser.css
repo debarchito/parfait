@@ -109,7 +109,7 @@
       --chrome-content-separator-color: var(--pf-toolbar-bgcolor);
       --content-area-shadow: none;
       --pf-browser-radius: 0;
-      --pf-browser-separation: 0;
+      --pf-browser-separation: 0px;
       --pf-browser-separation-inline: 0;
     }
     @media -moz-pref("parfait.blur.enabled") {
