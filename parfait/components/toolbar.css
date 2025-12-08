@@ -24,6 +24,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   }
   & > .toolbarbutton-badge-stack {
     background-color: transparent !important;
+    --border-color-card: transparent;
   }
   &:not([disabled]) {
     &[checked],
@@ -37,15 +38,12 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     &:hover:active {
       fill: var(--pf-icon-color-active) !important;
     }
-    &:not(:is(
-      #back-button,
-      #forward-button,
-      #reload-button
-    )):active .toolbarbutton-icon {
+    &:not(#back-button, #forward-button, #reload-button):active .toolbarbutton-icon {
       scale: 0.95;
     }
   }
 }
+#fxa-avatar-label { display: none }
 /* set positioning */
 #navigator-toolbox {
   z-index: unset !important;
