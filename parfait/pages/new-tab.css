@@ -133,10 +133,6 @@
   .personalize-button > label {
     display: none;
   }
-  .customize-menu.customize-animate-enter-done,
-  .customize-menu.customize-animate-enter-active {
-    transform: scale(1) !important;
-  }
   /* customize menu */
   .customize-menu {
     width: 450px !important;
@@ -145,14 +141,30 @@
     right: 20px !important;
     bottom: 20px !important;
     padding: 0 !important;
+    background-color: var(--newtab-background-color-secondary);
     border: 1px solid var(--pf-border-color);
     border-radius: var(--border-radius-medium);
     box-shadow: none !important;
     backdrop-filter: var(--pf-bg-blur);
+    transition: transform 250ms;
     transform: scale(0) !important;
     transform-origin: bottom right;
     transition-timing-function: cubic-bezier(0.125, 1.125, 0.25, 1.0125) !important;
     overflow: hidden !important;
+  }
+  .customize-animate-enter-active > .customize-menu,
+  .customize-animate-enter-done > .customize-menu,
+  .customize-menu.customize-animate-enter-done,
+  .customize-menu.customize-animate-enter-active {
+    transform: scale(1) !important;
+  }
+  .customize-menu-animate-wrapper {
+    width: unset !important;
+    height: unset !important;
+    top: unset !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: unset !important;
   }
   .personalize-button.personalize-animate-exit-done {
     transform: scale(0);
