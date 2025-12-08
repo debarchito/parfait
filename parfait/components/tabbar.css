@@ -239,10 +239,11 @@ spacer[part="overflow-end-indicator"],
   &:not([pinned]) {
     & .tab-context-line {
       order: 1;
-      margin-block: calc(var(--tab-min-height) / 3) !important;
+      min-height: calc(var(--tab-min-height) / 3);
+      margin-block: auto !important;
     }
     &[selected] .tab-context-line {
-      margin-block: calc(var(--tab-min-height) / 4.5) !important;
+      min-height: calc(var(--tab-min-height) / 2);
     }
   }
   &[pinned] {
@@ -250,12 +251,12 @@ spacer[part="overflow-end-indicator"],
       flex-direction: column-reverse !important;
     }
     & .tab-context-line {
-      width: auto !important;
+      min-width: 12px;
       height: 2px !important;
-      margin: 0 calc(var(--tab-min-height) / 2) !important;
+      margin: 0 auto !important;
     }
     &[selected] .tab-context-line {
-      margin-inline: calc(var(--tab-min-height) / 3) !important;
+      min-width: 24px;
     }
   }
 }
