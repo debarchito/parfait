@@ -352,14 +352,14 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
         width: unset !important;
       }
       &:not([pinned]) {
-        & .tab-label-container {
+        .tab-label-container {
           display: flex !important;
         }
-        & .tab-throbber,
+        .tab-throbber,
         &:not([soundplaying]) .tab-icon-image {
           margin-inline-end: 10px;
         }
-        & .tab-close-button {
+        .tab-close-button {
           display: none !important;
           width: 24px !important;
           height: 24px !important;
@@ -397,7 +397,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       --tab-group-line-color: transparent;
     }
     #tabbrowser-tabs {
-      & tab-group > .tabbrowser-tab,
+      tab-group > .tabbrowser-tab,
       &[movingtab][movingtab-addToGroup]:not([movingtab-group], [movingtab-ungroup]) .tabbrowser-tab:is(:active, [multiselected]) {
         margin-inline-start: 18px !important;
       }
@@ -406,7 +406,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #vertical-tabs-newtab-button {
       width: 100% !important;
       
-      & .toolbarbutton-text {
+      .toolbarbutton-text {
         display: flex !important;
       }
     }

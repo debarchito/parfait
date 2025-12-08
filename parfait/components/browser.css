@@ -19,10 +19,10 @@
       --pf-bg-gradient-2: color-mix(in oklab, transparent, var(--pf-browser-bgcolor) var(--pf-browser-opacity));
       --toolbox-bgcolor: linear-gradient(var(--pf-bg-gradient-1), var(--pf-bg-gradient-2)) !important;
       
-      & .browser-toolbox-background {
+      .browser-toolbox-background {
         background: var(--pf-bg-gradient-1) !important;
       }
-      & #browser {
+      #browser {
         background: var(--toolbox-bgcolor) !important;
       }
     }
@@ -49,10 +49,10 @@
   --pf-sidebar-bgcolor-1: var(--toolbox-bgcolor);
   --pf-sidebar-bgcolor-2: var(--toolbox-bgcolor);
   
-  & .browser-toolbox-background {
+  .browser-toolbox-background {
     background-color: var(--lwt-accent-color);
   }
-  & #navigator-toolbox {
+  #navigator-toolbox {
     &::before {
       content: "";
       width: 100%;
@@ -61,7 +61,7 @@
       background: linear-gradient(transparent 75%, var(--toolbox-bgcolor));
     }
   }
-  & .urlbarView-row[selected] {
+  .urlbarView-row[selected] {
     background-color: color-mix(in srgb, AccentColor, light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)) 40%) !important;
   }
   &[sidebar-expand-on-hover] #sidebar-main {
@@ -74,11 +74,11 @@
     background-repeat: var(--lwt-background-tiling) !important;
     background-position: var(--lwt-background-alignment) !important;
     
-    & #navigator-toolbox {
+    #navigator-toolbox {
       background-image: none !important;
     }
-    & .browser-toolbox-background,
-    & #navigator-toolbox::before {
+    .browser-toolbox-background,
+    #navigator-toolbox::before {
       background: transparent !important;
     }
     /* floating sidebar */
@@ -113,7 +113,7 @@
       --pf-browser-separation-inline: 0;
     }
     @media -moz-pref("parfait.blur.enabled") {
-      & browser:not(.devtools-toolbox-bottom-iframe) { clip-path: inset(0 round 0.01px); }
+      browser:not(.devtools-toolbox-bottom-iframe) { clip-path: inset(0 round 0.01px); }
     }
   }
 }

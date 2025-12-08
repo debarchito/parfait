@@ -17,7 +17,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   max-height: var(--pf-toolbaritem-size);
   padding: 0 !important;
   
-  & .toolbarbutton-icon {
+  .toolbarbutton-icon {
     transition: var(--pf-ts-25);
     transition-timing-function: var(--pf-fx-bounce) !important;
     background-color: transparent !important;

@@ -51,7 +51,7 @@
       outline: 6px solid var(--pf-border-color) !important;
       transition: transform 0.25s;
     }
-    & .top-site-button:hover:active .tile {
+    .top-site-button:hover:active .tile {
       transform: scale(0.95);
     }
   }

@@ -79,8 +79,8 @@ spacer[part="overflow-end-indicator"],
       --tab-pinned-container-margin-inline-expanded: 0;
       --tab-height-with-margin-padding: calc(var(--pf-pinned-height) + 8px);
     }
-    & .tabbrowser-tab[pinned] {
-      & .tab-background {
+    .tabbrowser-tab[pinned] {
+      .tab-background {
         #sidebar-main[hidden] &,
         #tabbrowser-tabs[expanded] & {
           --tab-min-height: var(--pf-pinned-height);
@@ -89,12 +89,12 @@ spacer[part="overflow-end-indicator"],
           --tab-block-margin: 4px;
         }
       }
-      & .tab-content[titlechanged] {
+      .tab-content[titlechanged] {
         background-position: calc(100% - 8px) 8px !important;
       }
     }
   }
-  & .tabbrowser-tab[pinned] .tab-background {
+  .tabbrowser-tab[pinned] .tab-background {
     .tabbrowser-tab:not(:hover) > .tab-stack > &:not([selected], [multiselected]) {
       background-color: var(--pf-toolbar-bgcolor) !important;
     }
@@ -106,10 +106,10 @@ spacer[part="overflow-end-indicator"],
 
 /* tabs: regular */
 #tabbrowser-tabs[orient="vertical"] {
-  & .tabbrowser-tab {
+  .tabbrowser-tab {
     padding-block: 0 !important;
     
-    & .tab-icon-image {
+    .tab-icon-image {
       transition: scale var(--pf-ts-15), opacity var(--pf-ts-15) !important;
     }
     /* tabs: title changed */
@@ -117,14 +117,14 @@ spacer[part="overflow-end-indicator"],
       transition: padding-left var(--pf-ts-15);
     }
     &[titlechanged]:not([pinned]) {
-      & .tab-content {
+      .tab-content {
         background-image: none !important;
       }
-      & .tab-label-container {
+      .tab-label-container {
         position: relative;
         padding-left: 12px;
 
-        & .tab-label::before {
+        .tab-label::before {
           content: "";
           width: 2px;
           height: 16px;
@@ -138,12 +138,12 @@ spacer[part="overflow-end-indicator"],
     }
     /* pending tabs */
     &[pending] {
-      & .tab-icon-image { opacity: 0.4; }
-      & .tab-label-container { opacity: 0.6; }
+      .tab-icon-image { opacity: 0.4; }
+      .tab-label-container { opacity: 0.6; }
     }
     /* unloaded tabs */
     &[discarded] {
-      & .tab-icon-stack::after {
+      .tab-icon-stack::after {
         content: "";
         width: 20px !important;
         height: 20px !important;
@@ -154,10 +154,10 @@ spacer[part="overflow-end-indicator"],
         border-radius: 999px;
         opacity: 0.4;
       }
-      & .tab-icon-image { transform: scale(0.9); }
+      .tab-icon-image { transform: scale(0.9); }
     }
   }
-  & .tab-background {
+  .tab-background {
     --tab-min-height: var(--pf-tab-height);
     --tab-selected-bgcolor: light-dark(rgba(255, 255, 255, 0.8), rgba(238, 239, 243, 0.2));
     --tab-selected-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 1px 1px rgba(0, 0, 0, 0.09);
@@ -172,20 +172,20 @@ spacer[part="overflow-end-indicator"],
       transition: var(--pf-ts-15);
     }
   }
-  & .tabbrowser-tab[selected]:not([pinned]) .tab-background {
+  .tabbrowser-tab[selected]:not([pinned]) .tab-background {
     animation: tab-select var(--pf-ts-25) var(--pf-fx-bounce);
   }
-  & .tab-stack {
+  .tab-stack {
     transition: scale var(--pf-ts-15);
     
     .tabbrowser-tab[selected]:hover:active:not(:has(.tab-audio-button:active, .tab-close-button:active)) & {
       scale: 0.985;
     }
   }
-  & .tab-content {
+  .tab-content {
     padding-inline: calc(var(--tab-inline-padding) + var(--pf-separation) - 8px) !important;
   }
-  & .tab-label {
+  .tab-label {
     color: var(--pf-text-color);
     
     &:-moz-window-inactive {
@@ -220,8 +220,8 @@ spacer[part="overflow-end-indicator"],
     list-style-image: var(--pf-icon-audio-mute-12) !important;
   }
   /* tabs: hide close button */
-  & .tabbrowser-tab[visuallyselected]:not([pinned]) {
-    & .tab-close-button { display: none !important; }
+  .tabbrowser-tab[visuallyselected]:not([pinned]) {
+    .tab-close-button { display: none !important; }
     &:is(:hover) .tab-close-button { display: block !important; }
   }
 }
@@ -232,12 +232,12 @@ spacer[part="overflow-end-indicator"],
 
 /* tabs: containers */
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[usercontextid] {
-  & .tab-context-line {
+  .tab-context-line {
     opacity: 0.75;
     transition: var(--pf-ts-50) var(--pf-fx-bounce);
   }
   &:not([pinned]) {
-    & .tab-context-line {
+    .tab-context-line {
       order: 1;
       min-height: calc(var(--tab-min-height) / 3);
       margin-block: auto !important;
@@ -247,10 +247,10 @@ spacer[part="overflow-end-indicator"],
     }
   }
   &[pinned] {
-    & .tab-background {
+    .tab-background {
       flex-direction: column-reverse !important;
     }
-    & .tab-context-line {
+    .tab-context-line {
       min-width: 12px;
       height: 2px !important;
       margin: 0 auto !important;
@@ -398,7 +398,7 @@ spacer[part="overflow-end-indicator"],
   }
   .tab-group-overflow-count-container { display: none !important; }
   &[expanded] {
-    & tab-group > :is(.tabbrowser-tab),
+    tab-group > :is(.tabbrowser-tab),
     &[movingtab][movingtab-addToGroup]:not([movingtab-group], [movingtab-ungroup]) .tabbrowser-tab:is(:active, [multiselected]) {
       --space-medium: 14px;
     }

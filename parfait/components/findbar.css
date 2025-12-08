@@ -25,13 +25,13 @@
     backdrop-filter: var(--pf-acrylic-filter);
     --pf-panel-bgcolor: var(--pf-panel-bgcolor-transparent);
   }
-  & .findbar-container {
+  .findbar-container {
     flex-wrap: wrap;
     margin-left: 0 !important;
     min-height: 40px;
     height: 100% !important;
   }
-  & .findbar-closebutton {
+  .findbar-closebutton {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -39,40 +39,40 @@
     min-width: 24px;
     min-height: 24px;
   }
-  & hbox[anonid="findbar-textbox-wrapper"] {
+  hbox[anonid="findbar-textbox-wrapper"] {
     width: var(--pf-findbar-width) !important;
     min-height: 40px;
     padding: 8px;
     border-bottom: 1px solid var(--pf-border-color);
     gap: 4px;
     
-    & .findbar-textbox {
+    .findbar-textbox {
       width: calc((var(--pf-findbar-width) - (16px * 2)) - (24px * 3)) !important;
       background: none !important;
       border: 0 !important;
       box-shadow: none !important;
       outline: none !important;
     }
-    & .findbar-find-previous,
-    & .findbar-find-next {
+    .findbar-find-previous,
+    .findbar-find-next {
       width: 24px;
       height: 24px;
       margin: 0 !important;
     }
   }
-  & checkbox {
+  checkbox {
     margin: 8px 3px !important;
     
     &:hover .checkbox-label-box {
       background-color: var(--pf-toolbar-bgcolor-hover);
     }
-    & .checkbox-label-box {
-      border-radius: var(--pf-border-radius-xsmall);
-    }
     &[checked] .checkbox-label-box {
       background-color: var(--pf-toolbar-bgcolor-active);
     }
-    & .checkbox-icon {
+    .checkbox-label-box {
+      border-radius: var(--pf-border-radius-xsmall);
+    }
+    .checkbox-icon {
       width: 24px;
       height: 24px;
       margin: 0 !important;
@@ -98,9 +98,9 @@
       margin-left: 8px !important;
     }
   }
-  & .checkbox-check,
-  & .checkbox-label,
-  & .findbar-find-status[data-l10n-id="findbar-wrapped-to-top"] {
+  .checkbox-check,
+  .checkbox-label,
+  .findbar-find-status[data-l10n-id="findbar-wrapped-to-top"] {
     display: none;
   }
 }

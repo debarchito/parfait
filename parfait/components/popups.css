@@ -107,14 +107,14 @@
     flex-direction: column;
     align-items: start;
     
-    & .menuitem-iconic {
+    .menuitem-iconic {
       width: calc(100% - (var(--menuitem-margin-inline) * 2));
       justify-content: start !important;
       padding: var(--menuitem-padding) !important;
       margin: var(--menuitem-margin) !important;
 
       &::after { content: attr(aria-label); }
-      & .menu-icon { display: none !important; }
+      .menu-icon { display: none !important; }
     }
   }
 }
