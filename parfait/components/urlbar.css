@@ -204,6 +204,7 @@
   & .urlbarView-row {
     border-radius: var(--pf-urlbar-result-radius) !important;
     --urlbarView-highlight-background: var(--pf-toolbar-bgcolor-active) !important;
+    --urlbarView-highlight-color: currentColor;
     
     @media not -moz-pref("parfait.urlbar.results.compact") {
       &:not([type="tip"], [type="dynamic"]) {
