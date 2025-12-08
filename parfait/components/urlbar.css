@@ -391,6 +391,10 @@
   }
   #taskbar-tabs-button > .urlbar-icon {
     list-style-image: var(--pf-icon-install) !important;
+    
+    :root[taskbartab] & {
+      list-style-image: var(--pf-icon-uninstall) !important;
+    }
   }
   #pageAction-urlbar-_testpilot-containers {
     --pageAction-image: var(--pf-icon-container-open) !important;
