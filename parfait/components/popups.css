@@ -142,6 +142,13 @@ panel toolbarseparator {
     fill-opacity: 0.4 !important;
   }
 }
+#appMenu-fullscreen-button2 {
+  list-style-image: var(--pf-icon-fullscreen) !important;
+  
+  &[checked] {
+    list-style-image: var(--pf-icon-fullscreen-exit) !important;
+  }
+}
 
 /* tabs list */
 .all-tabs-mute-button[soundplaying] {

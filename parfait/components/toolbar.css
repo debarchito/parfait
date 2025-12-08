@@ -129,6 +129,9 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 #new-tab-button {
   list-style-image: var(--pf-icon-plus-square) !important;
 }
+#fullscreen-button {
+  list-style-image: var(--pf-icon-fullscreen) !important;
+}
 #bookmarks-toolbar-button,
 #bookmarks-toolbar-placeholder {
   list-style-image: var(--pf-icon-bookmarks-square) !important;
