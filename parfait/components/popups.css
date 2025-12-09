@@ -103,6 +103,13 @@
     background-image: var(--pf-icon-chevron-right-small) !important;
     --menu-arrow-size: 12px;
   }
+  menuitem[badge]::after {
+    background-color: var(--pf-toolbar-bgcolor-active) !important;
+    color: currentColor !important;
+    border: 0 !important;
+    --space-xxsmall: 1px;
+    --border-radius-small: 999px;
+  }
   #context-navigation {
     flex-direction: column;
     align-items: start;
