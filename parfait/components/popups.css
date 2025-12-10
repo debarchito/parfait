@@ -130,7 +130,7 @@ panel toolbarseparator {
 }
 /* native panels */
 @media (-moz-platform: macos) or (-moz-windows-mica-popups) {
-  panel:not(#ctrlTab-panel) {
+  panel[type="arrow"] {
     transition: none !important;
     appearance: auto !important;
     -moz-default-appearance: menupopup;
