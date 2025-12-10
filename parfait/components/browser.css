@@ -45,7 +45,6 @@
   --pf-accent-color: var(--toolbarbutton-icon-fill);
   --pf-text-color: var(--lwt-text-color);
   --pf-icon-color: var(--toolbarbutton-icon-fill);
-  
   --pf-sidebar-bgcolor-1: var(--toolbox-bgcolor);
   --pf-sidebar-bgcolor-2: var(--toolbox-bgcolor);
   
@@ -61,16 +60,12 @@
       background: linear-gradient(transparent 75%, var(--toolbox-bgcolor));
     }
   }
-  .urlbarView-row[selected] {
-    background-color: color-mix(in srgb, AccentColor, light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25)) 40%) !important;
-  }
   &[sidebar-expand-on-hover] #sidebar-main {
     background: var(--toolbox-bgcolor) !important;
   }
   /* alt lwt theming: only works for select themes! */
   @media -moz-pref("parfait.theme.lwt.alt") {
-    background-image: var(--lwt-additional-images) !important;
-    background-color: var(--lwt-accent-color) !important;
+    background: var(--lwt-additional-images), var(--lwt-accent-color) !important;
     background-repeat: var(--lwt-background-tiling) !important;
     background-position: var(--lwt-background-alignment) !important;
     
@@ -84,8 +79,7 @@
     /* floating sidebar */
     @media -moz-pref("sidebar.visibility", "hide-sidebar") {
       &:has(#tabbrowser-tabs:not([expanded])) #sidebar-main {
-        background-image: var(--lwt-additional-images) !important;
-        background-color: var(--lwt-accent-color) !important;
+        background: var(--lwt-additional-images), var(--lwt-accent-color) !important;
         background-repeat: var(--lwt-background-tiling) !important;
         background-position: var(--lwt-background-alignment) !important;
       }

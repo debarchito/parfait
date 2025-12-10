@@ -143,33 +143,31 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 }
 
 /* ti: animations */
-#back-button:not([disabled]):hover:active .toolbarbutton-icon {
-  transform: translateX(-2px);
-}
-#forward-button:not([disabled]):hover:active .toolbarbutton-icon {
-  transform: translateX(2px);
-}
-#stop-reload-button {
+@media not -moz-pref("parfait.animations.enabled", false) {
+  #back-button:not([disabled]):hover:active .toolbarbutton-icon {
+    transform: translateX(-2px);
+  }
+  #forward-button:not([disabled]):hover:active .toolbarbutton-icon {
+    transform: translateX(2px);
+  }
   #reload-button:not([disabled]) {
     transition: all var(--pf-ts-15);
     transition-timing-function: var(--pf-fx-bounce);
-    
+
     &:hover:active .toolbarbutton-icon {
       transform: rotate(90deg);
     }
   }
-  @media not -moz-pref("parfait.animations.enabled", false) {
-    #reload-button,
-    #stop-button {
-      opacity: 1 !important;
-      
-      & > .toolbarbutton-icon {
-        animation: bounce var(--pf-ts-25);
-        background-color: transparent !important;
-      }
-      .toolbarbutton-animatable-image {
-        --anim-steps: 0 !important;
-      }
+  #reload-button,
+  #stop-button {
+    opacity: 1 !important;
+
+    & > .toolbarbutton-icon {
+      animation: bounce var(--pf-ts-25);
+      background-color: transparent !important;
+    }
+    .toolbarbutton-animatable-image {
+      --anim-steps: 0 !important;
     }
   }
 }

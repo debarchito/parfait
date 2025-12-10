@@ -127,10 +127,8 @@
         font-size: 16px !important;
         font-weight: 600 !important;
       }
-      &[pageproxystate="valid"] {
-        .urlbar-input-box {
-          padding-left: 8px;
-        }
+      &[pageproxystate="valid"] .urlbar-input-box {
+        padding-left: 8px;
       }
       #urlbar-searchmode-switcher {
         margin-inline: 1px 10px !important;
@@ -371,9 +369,7 @@
   #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, a.extensionPage) > .identity-box-button {
     padding-inline: var(--urlbar-icon-padding) !important;
   }
-  #identity-box[pageproxystate="valid"].notSecure #identity-icon,
-  #identity-box[pageproxystate="valid"].mixedActiveContent #identity-icon,
-  #identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon {
+  #identity-box[pageproxystate="valid"]:is(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage) #identity-icon {
     list-style-image: url("chrome://devtools/skin/images/alert.svg") !important;
     fill: light-dark(var(--color-red-50), var(--color-red-30));
   }
