@@ -126,6 +126,7 @@
   #sidebar-box,
   :root:has(#tabbrowser-tabs[expanded]) #sidebar-splitter {
     padding-block-end: var(--pf-browser-separation) !important;
+    -moz-window-dragging: no-drag;
     --browser-area-z-index-sidebar: 2;
     
     @media -moz-pref("parfait.toolbar.unified-toolbar") {
