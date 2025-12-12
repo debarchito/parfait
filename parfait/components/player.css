@@ -30,7 +30,7 @@
     background-image: none !important;
   }
   .control-item {
-    font-family: inherit;
+    font-family: system-ui, sans-serif;
     opacity: 1 !important;
   }
   .controls-bottom-lower {
@@ -152,7 +152,7 @@
   }
   .panel-legend,
   .box label:not(.switch) {
-    font-family: inherit !important;
+    font-family: system-ui, sans-serif !important;
   }
   input:checked + .slider {
     background-color: var(--pf-accent-color) !important;
