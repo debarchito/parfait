@@ -369,7 +369,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           background: transparent !important;
           position: unset !important;
           box-shadow: unset !important;
-          border-radius: var(--tab-border-radius) !important;
+          border-radius: calc(var(--tab-border-radius) - 3px) !important;
           
           &:hover {
             background-color: var(--pf-toolbar-bgcolor-hover) !important;
