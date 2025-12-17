@@ -60,7 +60,7 @@
       overflow: hidden;
     }
     /* page actions */
-    .urlbar-page-action:not([open]) {
+    .urlbar-page-action:not([open], [translationsactive]) {
       width: 0 !important;
       padding-inline: 0 !important;
       opacity: 0;
@@ -354,6 +354,7 @@
 #tracking-protection-icon-container {
   order: 1 !important;
 }
+#translations-button-locale,
 #identity-icon-label,
 #urlbar-label-box,
 #identity-permission-box > #blocked-permissions-container {
@@ -392,6 +393,24 @@
 }
 #pageAction-urlbar-_testpilot-containers {
   --pageAction-image: var(--pf-icon-container-open) !important;
+}
+/* ui: translations */
+#translations-button-icon {
+  list-style-image: var(--pf-icon-translate) !important;
+}
+#translations-button[translationsactive] {
+  order: 98;
+}
+#translations-button[translationsactive] > #translations-button-icon {
+  fill: var(--pf-accent-text-color) !important;
+}
+#translations-button-circle-arrows {
+  transition: all var(--pf-ts-15);
+  
+  &[hidden] {
+    display: unset;
+    width: 0 !important;
+  }
 }
 /* ui: zoom */
 #urlbar-zoom-button {
