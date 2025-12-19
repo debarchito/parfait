@@ -21,7 +21,6 @@
   --pf-separation: 8px;
   --pf-browser-separation: 10px;
   --pf-tl-size: 12px;
-  --pf-tl-width: 70px;
   --pf-tl-margin: var(--pf-tl-width);
   --pf-tl-padding: 14px 4px;
   --pf-tl-gap: 8px;
@@ -38,8 +37,8 @@
   --pf-sidebar-btn-margin: 0px;
   
   /* calc */
+  --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
   --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
-  --pf-sidebar-gutter-macos: calc(var(--pf-sidebar-width) - var(--pf-sidebar-min) - 2px);
   --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
   --pf-topbar-margin: calc(var(--pf-browser-separation) - var(--pf-topbar-height));
   --pf-collapsed-width: calc(var(--pf-tl-width) - var(--pf-separation));
@@ -148,9 +147,12 @@
   @media (-moz-platform: macos) { --pf-window-radius: 12px; }
   @media (-moz-mac-tahoe-theme) { --pf-window-radius: 16px; }
   
-  /* title bar margin */
-  @media -moz-pref("parfait.traffic-lights.enabled") {
-    --pf-tl-margin: 0px;
+  /* traffic lights */
+  @media -moz-pref("parfait.traffic-lights.enabled") { --pf-tl-margin: 0px; }
+  @media (-moz-platform: macos) { --pf-tl-margin: -2px; }
+  @media (-moz-mac-tahoe-theme) {
+    --pf-tl-size: 14px;
+    --pf-tl-margin: -8px;
   }
   
   /* borderless */

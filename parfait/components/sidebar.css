@@ -77,11 +77,8 @@
       @media -moz-pref("parfait.toolbar.sidebar-gutter") and (not -moz-pref("sidebar.visibility", "expand-on-hover")) {
         --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
 
-        @media -moz-pref("parfait.traffic-lights.enabled") {
+        @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
           --pf-sidebar-btn-margin: var(--pf-sidebar-gutter);
-        }
-        @media (-moz-platform: macos) {
-          --pf-sidebar-btn-margin: var(--pf-sidebar-gutter-macos);
 
           &[macOSNativeFullscreen] {
             --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
