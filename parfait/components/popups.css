@@ -157,6 +157,48 @@ panel toolbarseparator {
   }
 }
 
+/* translate selection */
+.translations-panel-header-wrapper {
+  display: flex;
+  gap: 8px;
+  --heading-font-size-xlarge: var(--pf-font-size-1);
+  
+  &::before {
+    content: var(--pf-icon-translate);
+    fill: var(--color-accent-primary);
+    -moz-context-properties: fill;
+  }
+}
+.select-translations-panel-label {
+  font-weight: 600;
+  color: var(--pf-text-color-inactive);
+}
+#select-translations-panel-text-area {
+  background: var(--pf-input-bgcolor) !important;
+  border-color: var(--pf-border-color-light) !important;
+  border-inline: 0 !important;
+  outline: none !important;
+  margin-inline: calc(0px - var(--arrowpanel-padding)) !important;
+  padding: 16px !important;
+  font-size: calc(var(--pf-font-size-1) - 1px) !important;
+  --border-radius-medium: 0;
+}
+#select-translations-panel-footer {
+  margin: 12px !important;
+  padding-block: 0 !important;
+}
+.select-translations-panel-copy-button:not(:hover) {
+  background-color: var(--button-background-color) !important;
+}
+.select-translations-panel-copy-button .button-icon {
+  display: none;
+}
+#select-translations-panel-from,
+#select-translations-panel-to,
+.footer-button {
+  font-size: calc(var(--pf-font-size-1) - 1px);
+}
+
 /* link preview */
 #link-preview-panel {
   width: var(--panel-width) !important;
@@ -164,7 +206,7 @@ panel toolbarseparator {
   --panel-color: var(--pf-text-color) !important;
 }
 .og-card {
-  background-color: light-dark(rgba(0, 0, 0, 0.02), rgba(248, 248, 248, 0.04)) !important;
+  background-color: var(--pf-input-bgcolor) !important;
   font-size: 12px !important;
 }
 .og-card-content,
@@ -232,6 +274,7 @@ panel toolbarseparator {
       order: 1;
     }
     img.icon {
+      fill: var(--color-accent-primary) !important;
       margin-right: 8px;
       order: -1;
       --space-xlarge: 0;
@@ -262,6 +305,8 @@ panel toolbarseparator {
     display: none !important;
   }
 }
+
+/* ai: opt-in message */
 .optin-wrapper {
   --space-large: 12px;
 }

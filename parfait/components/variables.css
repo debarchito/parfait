@@ -70,6 +70,7 @@
   --pf-icon-color: light-dark(rgba(91, 91, 102, 0.9), rgba(251, 251, 254, 0.8));
   --pf-icon-color-active: color-mix(in srgb, var(--pf-icon-color), var(--toolbar-color) 60%);
   --pf-menu-color: white;
+  --pf-input-bgcolor: light-dark(rgba(0, 0, 0, 0.02), rgba(248, 248, 248, 0.04));
   --pf-toolbar-bgcolor: light-dark(rgba(0, 0, 0, 0.06), rgba(248, 248, 248, 0.1));
   --pf-toolbar-bgcolor-hover: light-dark(rgba(0, 0, 0, 0.08), rgba(248, 248, 248, 0.125));
   --pf-toolbar-bgcolor-active: light-dark(rgba(0, 0, 0, 0.1), rgba(248, 248, 248, 0.175));
@@ -78,6 +79,7 @@
   --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.925));
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
+  --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
   --pf-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
   --pf-shadow-large: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
   
