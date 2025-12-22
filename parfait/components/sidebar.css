@@ -208,15 +208,17 @@
 .buttons-wrapper {
   min-height: 0 !important;
 }
-.tools-and-extensions {
-  width: 100%;
-  justify-content: space-between !important;
-  box-sizing: border-box;
-  padding-inline: var(--pf-bottombar-padding-inline) !important;
-  padding-block-end: var(--pf-bottombar-padding-block-end) !important;
+@media -moz-pref("sidebar.verticalTabs") {
+  .tools-and-extensions {
+    width: 100%;
+    justify-content: space-between !important;
+    box-sizing: border-box;
+    padding-inline: var(--pf-bottombar-padding-inline) !important;
+    padding-block-end: var(--pf-bottombar-padding-block-end) !important;
+  }
 }
 moz-button:not([type~="ghost"]):not(:hover) {
-  --toolbarbutton-active-background:  var(--pf-toolbar-bgcolor-hover);
+  --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-hover);
 }
 .button-background {
   --button-border-radius: var(--pf-border-radius-small);

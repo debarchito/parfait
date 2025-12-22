@@ -5,6 +5,9 @@
 
 /* window: background */
 :root:not([lwtheme]) {
+  #browser:not(.browser-toolbox-background) {
+    background-color: transparent !important;
+  }
   @media -moz-pref("parfait.bg.transparent") {
     --toolbox-bgcolor: var(--pf-browser-bgcolor-transparent) !important;
   }
@@ -31,10 +34,6 @@
       background: var(--toolbox-bgcolor) !important;
     }
   }
-}
-
-/* macos: window transparency */
-:root {
   @media (-moz-platform: macos) and (not (prefers-reduced-transparency)) {
     appearance: -moz-sidebar !important;
   }
@@ -99,12 +98,17 @@
     @media not -moz-pref("sidebar.visibility", "expand-on-hover") {
       margin-inline: var(--pf-browser-separation-inline) !important;
     }
+    @media not -moz-pref("sidebar.verticalTabs") {
+      &:not([sidebar-shown]) {
+        margin-inline: var(--pf-browser-separation) !important;
+      }
+    }
     @media -moz-pref("parfait.window.borderless") {
       --chrome-content-separator-color: var(--pf-toolbar-bgcolor);
       --content-area-shadow: none;
       --pf-browser-radius: 0;
       --pf-browser-separation: 0px;
-      --pf-browser-separation-inline: 0;
+      --pf-browser-separation-inline: 0px;
     }
     @media -moz-pref("parfait.blur.enabled") {
       browser:not(.devtools-toolbox-bottom-iframe) { clip-path: inset(0 round 0.01px); }
@@ -113,8 +117,8 @@
 }
 
 /* full screen */
-:root[inFullscreen] {
-  #navigator-toolbox { margin-top: 0 !important; }
+:root[inFullscreen] #navigator-toolbox {
+  margin-top: 0 !important;
 }
 
 /* customize menu */
