@@ -146,7 +146,7 @@
   
   /* browser radius */
   @media (-moz-platform: windows) { --pf-window-radius: 8px; }
-  @media (-moz-platform: macos) { --pf-window-radius: 12px; }
+  @media (-moz-platform: macos) or (-moz-gtk-theme-family: adwaita) or (-moz-gtk-theme-family: yaru) { --pf-window-radius: 12px; }
   @media (-moz-mac-tahoe-theme) { --pf-window-radius: 16px; }
   
   /* traffic lights */
