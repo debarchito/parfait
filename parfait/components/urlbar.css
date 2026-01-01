@@ -362,8 +362,12 @@
   }
 }
 /* urlbar icons */
-.urlbar-icon {
+.urlbar-icon,
+#identity-box,
+#trust-icon-container,
+#tracking-protection-icon-container {
   fill: var(--pf-icon-color) !important;
+  filter: unset !important;
   --urlbar-icon-fill-opacity: 1;
 }
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, a.extensionPage) > .identity-box-button {
