@@ -4,7 +4,7 @@
 */
 
 /* urlbar */
-:root:not([customizing]) {
+:root:not([customizing], [chromehidden~="toolbar"]) {
   --pf-urlbar-x: var(--pf-separation);
   --pf-urlbar-y: var(--pf-topbar-height);
 
@@ -162,6 +162,20 @@
         }
       }
     }
+  }
+  /* move and hide stuff */
+  #identity-box {
+    margin-inline-end: 0 !important;
+    order: 1;
+  }
+  #tracking-protection-icon-container {
+    order: 1 !important;
+  }
+  #translations-button-locale,
+  #identity-icon-label,
+  #urlbar-label-box,
+  #identity-permission-box > #blocked-permissions-container {
+    display: none;
   }
   /* fu: urlbar skeleton */
   #urlbar-container:has(> #urlbar:is([open]))::before {
@@ -346,20 +360,6 @@
   .urlbarView-action {
     border: none !important;
   }
-}
-/* move and hide stuff */
-#identity-box {
-  margin-inline-end: 0 !important;
-  order: 1;
-}
-#tracking-protection-icon-container {
-  order: 1 !important;
-}
-#translations-button-locale,
-#identity-icon-label,
-#urlbar-label-box,
-#identity-permission-box > #blocked-permissions-container {
-  display: none;
 }
 /* urlbar icons */
 .urlbar-icon {

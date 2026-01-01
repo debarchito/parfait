@@ -9,7 +9,7 @@
     transition-delay: var(--pf-topbar-delay) !important;
   }
   /* check sidebar state */
-  :root {
+  :root:not([chromehidden~="toolbar"]) {
     &:has(#tabbrowser-tabs:not([expanded])) {
       @media not -moz-pref("sidebar.visibility", "hide-sidebar") {
         --pf-topbar-margin: 0;
@@ -256,7 +256,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 
 /* floating sidebar */
 @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
-  :root:has(#tabbrowser-tabs:not([expanded])) {
+  :root:not([chromehidden~="toolbar"]):has(#tabbrowser-tabs:not([expanded])) {
     --pf-bookmarks-margin: calc(var(--pf-separation) * 2);
     
     /* sidebar */
@@ -419,7 +419,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 }
 /* floating unified sidebar */
 @media -moz-pref("parfait.toolbar.unified-sidebar") and -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
-  :root:has(#tabbrowser-tabs:not([expanded])) {
+  :root:not([chromehidden~="toolbar"]):has(#tabbrowser-tabs:not([expanded])) {
     /* fus: left side coordinates */
     --pf-fl-btn-sidebar-x: calc(var(--pf-tl-width) + var(--pf-separation));
     --pf-fl-btn-back-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 3) - (var(--pf-toolbar-spacing) * 2));
