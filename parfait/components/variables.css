@@ -77,7 +77,7 @@
   --pf-toolbar-bgcolor-active: light-dark(rgba(0, 0, 0, 0.1), rgba(248, 248, 248, 0.175));
   --pf-toolbar-bgcolor-inactive: light-dark(rgba(0, 0, 0, 0.04), rgba(248, 248, 248, 0.075));
   --pf-urlbar-bgcolor: light-dark(white, #191a1a);
-  --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.925));
+  --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.875));
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
   --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
