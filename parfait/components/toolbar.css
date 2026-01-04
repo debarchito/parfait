@@ -136,7 +136,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 }
 
 /* hide sidebar active state */
-#sidebar-button:not(:hover) {
+#sidebar-button[checked]:not(:hover) {
   background-color: transparent !important;
 }
 

@@ -220,7 +220,7 @@ spacer[part="overflow-end-indicator"],
     list-style-image: var(--pf-icon-audio-mute-12) !important;
   }
   /* tabs: hide close button */
-  .tabbrowser-tab[visuallyselected]:not([pinned]) {
+  .tabbrowser-tab:not([pinned]) {
     .tab-close-button { display: none !important; }
     &:is(:hover) .tab-close-button { display: block !important; }
   }
