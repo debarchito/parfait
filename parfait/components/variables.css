@@ -134,7 +134,7 @@
   /* preset: roundness */
   @media -moz-pref("parfait.theme.roundness.preset", 1) {
     --pf-border-radius: 12px;
-    --pf-border-radius-small: 8px;
+    --pf-border-radius-small: 6px;
     --pf-border-radius-xsmall: 4px;
   }
   @media -moz-pref("parfait.theme.roundness.preset", 2) {

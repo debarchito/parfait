@@ -51,6 +51,8 @@
     }
   }
   #urlbar:not([open]) {
+    --urlbar-inner-border-radius: calc(var(--pf-border-radius) - 3px);
+    
     /* urlbar items */
     #userContext-label,
     #identity-box:not([pageproxystate="invalid"]):not(.notSecure) #identity-icon-box:not([open]),
@@ -104,6 +106,7 @@
     width: 90vw !important;
     max-width: var(--pf-urlbar-width-max) !important;
     border-radius: var(--pf-urlbar-fl-radius);
+    --urlbar-inner-border-radius: calc(var(--pf-urlbar-result-radius) - 2px);
     --inactive-titlebar-opacity: 1;
 
     .urlbar-background {
