@@ -434,8 +434,8 @@ panel toolbarseparator {
   --border-radius-medium: 12px;
   
   &:is([data-identity="verifiedDomain"], [data-identity="unknownIdentity"])::before {
-    width: var(--pf-icon-size) !important;
-    height: var(--pf-icon-size) !important;
+    width: 16px !important;
+    height: 16px !important;
   }
   .pointerlockfswarning-domain-text,
   .pointerlockfswarning-generic-text {

@@ -419,7 +419,7 @@
 }
 /* ui: zoom */
 #urlbar-zoom-button {
-  min-height: var(--pf-icon-size);
+  min-height: 16px;
   margin: 0 !important;
   padding: 4px 8px !important;
   order: 99;

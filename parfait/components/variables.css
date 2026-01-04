@@ -8,7 +8,6 @@
 /* global variables */
 :root {
   /* sizes */
-  --pf-icon-size: 16px;
   --pf-pinned-height: 48px;
   --pf-tab-height: 36px;
   --pf-bookmarks-height: 40px;
@@ -21,9 +20,8 @@
   --pf-browser-separation: 10px;
   --pf-tl-size: 12px;
   --pf-tl-margin: var(--pf-tl-width);
-  --pf-tl-padding: 14px 4px;
+  --pf-tl-padding-inline: 14px 4px;
   --pf-tl-gap: 8px;
-  --pf-titlebar-windows: 138px;
   --pf-topbar-padding-block: 7px;
   --pf-toolbaritem-size: 32px;
   --pf-toolbaritem-spacing: 2px;
@@ -97,7 +95,7 @@
   
   /* horizontal layout */
   @media not -moz-pref("sidebar.verticalTabs") {
-    --pf-tl-padding: 16px 10px;
+    --pf-tl-padding-inline: 16px 10px;
   }
   
   /* density: compact mode */
