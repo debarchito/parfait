@@ -11,7 +11,6 @@
   --pf-icon-size: 16px;
   --pf-pinned-height: 48px;
   --pf-tab-height: 36px;
-  --pf-topbar-height: 46px;
   --pf-bookmarks-height: 40px;
   --pf-sidebar-width: 240px;
   --pf-urlbar-height: 36px;
@@ -25,9 +24,9 @@
   --pf-tl-padding: 14px 4px;
   --pf-tl-gap: 8px;
   --pf-titlebar-windows: 138px;
+  --pf-topbar-padding-block: 7px;
   --pf-toolbaritem-size: 32px;
-  --pf-toolbar-spacing: 2px;
-  --pf-sidebar-min: 210px;
+  --pf-toolbaritem-spacing: 2px;
   --pf-sidebar-collapsed: 52px;
   --pf-browser-separation-inline: 0 var(--pf-browser-separation);
   --pf-tab-group-preview-width: 260px;
@@ -38,8 +37,10 @@
   
   /* calc */
   --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
+  --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-spacing) * 3) + var(--pf-tl-width) + var(--pf-separation));
   --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
   --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
+  --pf-topbar-height: calc(var(--pf-toolbaritem-size) + (var(--pf-topbar-padding-block) * 2));
   --pf-topbar-margin: calc(var(--pf-browser-separation) - var(--pf-topbar-height));
   --pf-collapsed-width: calc(var(--pf-tl-width) - var(--pf-separation));
   --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + var(--pf-separation));
@@ -103,13 +104,14 @@
   &[uidensity="compact"] {
     --pf-tab-height: 30px;
     --pf-pinned-height: 40px;
+    --pf-toolbaritem-size: 28px;
     --pf-urlbar-height: 32px;
     --pf-urlbar-result-height: 32px;
   }
   /* density: touch mode */
   &[uidensity="touch"] {
     --pf-tab-height: 40px;
-    --pf-pinned-height: 56px;
+    --pf-toolbaritem-size: 34px;
     --pf-urlbar-height: 36px;
   }
   
