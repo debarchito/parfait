@@ -128,6 +128,12 @@
       margin-top: calc(var(--pf-browser-separation) - var(--pf-topbar-height)) !important;
       transition: margin-top var(--pf-ts-25);
     }
+    @media -moz-pref("parfait.window.borderless") {
+      --pf-browser-separation: 0px;
+      --pf-browser-radius: 0;
+      --space-medium: 4px;
+      --content-area-shadow: none;
+    }
   }
   #sidebar {
     --border-radius-medium: var(--pf-browser-radius) !important;
