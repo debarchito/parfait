@@ -72,16 +72,16 @@
         #tabbrowser-tabpanels {
           margin-top: var(--pf-navbar-margin-reverse);
         }
-      }
-      /* sidebar button gutter */
-      @media -moz-pref("parfait.toolbar.sidebar-gutter") and (not -moz-pref("sidebar.visibility", "expand-on-hover")) {
-        --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
+        /* sidebar button gutter */
+        @media -moz-pref("parfait.toolbar.sidebar-gutter") {
+          --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
 
-        @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
-          --pf-sidebar-btn-margin: var(--pf-sidebar-gutter);
+          @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
+            --pf-sidebar-btn-margin: var(--pf-sidebar-gutter);
 
-          &[macOSNativeFullscreen] {
-            --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
+            &[macOSNativeFullscreen] {
+              --pf-sidebar-btn-margin: calc(var(--pf-sidebar-gutter) - var(--pf-separation));
+            }
           }
         }
       }
@@ -96,7 +96,9 @@
       margin-inline-end: var(--pf-sidebar-btn-margin, 0px) !important;
       transition: margin-inline-end var(--pf-ts-25);
     }
-    /* main sidebar */
+  }
+  /* main sidebar */
+  @media -moz-pref("parfait.toolbar.unified-sidebar") {
     #sidebar-main {
       width: var(--pf-sidebar-collapsed);
 
@@ -113,9 +115,9 @@
       }
     }
     .wrapper { width: 100% !important; }
+    #sidebar-launcher-splitter { display: none !important; }
   }
   #tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
-  #sidebar-launcher-splitter { display: none !important; }
   
   /* sidebar 2 */
   #sidebar-box,
