@@ -8,46 +8,30 @@
 /* global variables */
 :root {
   /* sizes */
-  --pf-pinned-height: 48px;
   --pf-tab-height: 36px;
-  --pf-bookmarks-height: 40px;
+  --pf-pinned-height: 48px;
   --pf-sidebar-width: 240px;
+  --pf-sidebar-collapsed: 52px;
+  --pf-navbar-padding-block: 7px;
+  --pf-toolbaritem-size: 32px;
+  --pf-toolbaritem-spacing: 2px;
   --pf-urlbar-height: 36px;
   --pf-urlbar-width-max: 720px;
   --pf-urlbar-input-height: 56px;
-  --pf-urlbar-result-height: 48px;
+  --pf-urlbar-sr-height: 48px;
+  --pf-bookmarks-height: 40px;
   --pf-separation: 8px;
   --pf-browser-separation: 10px;
-  --pf-tl-size: 12px;
-  --pf-tl-margin: var(--pf-tl-width);
-  --pf-tl-padding-inline: 14px 4px;
-  --pf-tl-gap: 8px;
-  --pf-topbar-padding-block: 7px;
-  --pf-toolbaritem-size: 32px;
-  --pf-toolbaritem-spacing: 2px;
-  --pf-sidebar-collapsed: 52px;
-  --pf-tab-group-preview-width: 260px;
   --pf-fl-trigger-width: 12px;
   --pf-findbar-width: 320px;
   --pf-extensions-width: 228px;
-  --pf-sidebar-btn-margin: 0px;
-  
-  /* calc */
-  --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
-  --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-spacing) * 3) + var(--pf-tl-width) + var(--pf-separation));
-  --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
-  --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
-  --pf-topbar-height: calc(var(--pf-toolbaritem-size) + (var(--pf-topbar-padding-block) * 2));
-  --pf-topbar-margin: calc(var(--pf-browser-separation) - var(--pf-topbar-height));
-  --pf-collapsed-width: calc(var(--pf-tl-width) - var(--pf-separation));
-  --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + var(--pf-separation));
+  --pf-tab-group-preview-width: 260px;
   
   /* corner radii */
-  --pf-border-radius: 12px;
-  --pf-border-radius-small: 8px;
-  --pf-border-radius-xsmall: 4px;
+  --pf-border-radius-md: 12px;
+  --pf-border-radius-sm: 6px;
   --pf-urlbar-fl-radius: 12px;
-  --pf-urlbar-result-radius: 8px;
+  --pf-urlbar-sr-radius: 8px;
   --pf-window-radius: 12px;
   --pf-browser-radius: max(5px, calc(var(--pf-window-radius) - (var(--pf-separation) / 2)));
   
@@ -67,7 +51,6 @@
   --pf-text-color-inactive: color-mix(in srgb, var(--toolbar-color), transparent 50%);
   --pf-icon-color: light-dark(rgba(91, 91, 102, 0.9), rgba(251, 251, 254, 0.8));
   --pf-icon-color-active: color-mix(in srgb, var(--pf-icon-color), var(--toolbar-color) 60%);
-  --pf-menu-color: white;
   --pf-input-bgcolor: light-dark(rgba(0, 0, 0, 0.02), rgba(248, 248, 248, 0.04));
   --pf-toolbar-bgcolor: light-dark(rgba(0, 0, 0, 0.06), rgba(248, 248, 248, 0.1));
   --pf-toolbar-bgcolor-hover: light-dark(rgba(0, 0, 0, 0.08), rgba(248, 248, 248, 0.125));
@@ -78,15 +61,31 @@
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
   --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
-  --pf-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --pf-shadow-large: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
+  
+  /* shadows */
+  --pf-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --pf-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
   
   /* traffic lights */
+  --pf-tl-size: 12px;
+  --pf-tl-margin: var(--pf-tl-width);
+  --pf-tl-padding-inline: 14px 4px;
+  --pf-tl-gap: 8px;
   --pf-tl-min-color: #febc2e;
   --pf-tl-max-color: #28c840;
   --pf-tl-close-color: #ff5f57;
   --pf-tl-border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
   --pf-tl-mono: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
+  
+  /* calc */
+  --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
+  --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-spacing) * 3) + var(--pf-tl-width) + var(--pf-separation));
+  --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
+  --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
+  --pf-navbar-height: calc(var(--pf-toolbaritem-size) + (var(--pf-navbar-padding-block) * 2));
+  --pf-navbar-margin: calc(var(--pf-browser-separation) - var(--pf-navbar-height));
+  --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + var(--pf-separation));
+  --pf-fl-trigger-sum: calc(var(--pf-separation) + var(--pf-fl-trigger-width));
   
   /* other */
   --pf-background-filter: blur(8px);
@@ -103,7 +102,7 @@
     --pf-pinned-height: 40px;
     --pf-toolbaritem-size: 28px;
     --pf-urlbar-height: 32px;
-    --pf-urlbar-result-height: 32px;
+    --pf-urlbar-sr-height: 32px;
   }
   /* density: touch mode */
   &[uidensity="touch"] {
@@ -124,7 +123,7 @@
   @media -moz-pref("parfait.bg.contrast", 3) { --pf-browser-contrast: 25%; }
   @media -moz-pref("parfait.bg.contrast", 4) { --pf-browser-contrast: 0%; }
   
-  /* sidebar width */
+  /* preset: sidebar width */
   @media -moz-pref("parfait.sidebar.width.preset", 1) { --pf-sidebar-width: 220px; }
   @media -moz-pref("parfait.sidebar.width.preset", 2) { --pf-sidebar-width: 240px; }
   @media -moz-pref("parfait.sidebar.width.preset", 3) { --pf-sidebar-width: 260px; }
@@ -133,14 +132,12 @@
   
   /* preset: roundness */
   @media -moz-pref("parfait.theme.roundness.preset", 1) {
-    --pf-border-radius: 12px;
-    --pf-border-radius-small: 6px;
-    --pf-border-radius-xsmall: 4px;
+    --pf-border-radius-md: 12px;
+    --pf-border-radius-sm: 6px;
   }
   @media -moz-pref("parfait.theme.roundness.preset", 2) {
-    --pf-border-radius: 6px;
-    --pf-border-radius-small: 4px;
-    --pf-border-radius-xsmall: 4px;
+    --pf-border-radius-md: 6px;
+    --pf-border-radius-sm: 4px;
   }
   
   /* browser radius */
@@ -158,7 +155,7 @@
   
   /* borderless */
   @media -moz-pref("parfait.window.borderless") {
-    --pf-topbar-margin: calc(0px - var(--pf-topbar-height));
+    --pf-navbar-margin: calc(0px - var(--pf-navbar-height));
   }
   
   /* animation */
@@ -180,11 +177,12 @@
   --pf-fx-folder: cubic-bezier(0.42, 0, 0, 1);
   
   /* timings */
-  --pf-topbar-delay: 0.15s;
+  --pf-navbar-delay: 0.15s;
   
   /* firefox */
-  --border-radius-medium: var(--pf-border-radius) !important;
-  --urlbar-icon-border-radius: var(--pf-border-radius-small) !important;
+  --border-radius-small: var(--pf-border-radius-sm) !important;
+  --border-radius-medium: var(--pf-border-radius-md) !important;
+  --urlbar-icon-border-radius: var(--pf-border-radius-sm) !important;
   
   --focus-outline-color: var(--pf-accent-color) !important;
   --urlbar-box-bgcolor: transparent !important;

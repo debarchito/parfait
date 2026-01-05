@@ -8,7 +8,7 @@
   display: none;
 }
 #nav-bar > .titlebar-buttonbox-container {
-  height: var(--pf-topbar-height);
+  height: var(--pf-navbar-height);
   visibility: visible !important;
 }
 

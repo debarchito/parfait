@@ -280,7 +280,7 @@ spacer[part="overflow-end-indicator"],
     outline: none !important;
     color: var(--pf-text-color) !important;
     transition: var(--pf-ts-15) !important;
-    --tab-border-radius: var(--pf-border-radius);
+    --tab-border-radius: var(--pf-border-radius-md);
     
     /* folder colors */
     --pf-folder-color-1: var(--toolbar-bgcolor);

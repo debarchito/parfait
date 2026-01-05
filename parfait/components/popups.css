@@ -35,7 +35,7 @@
   
   .unified-extensions-item {
     background-color: color-mix(in srgb, var(--pf-toolbar-bgcolor), transparent 70%);
-    border-radius: var(--pf-border-radius) !important;
+    border-radius: var(--pf-border-radius-md) !important;
   }
 }
 .unified-extensions-item {
@@ -47,7 +47,7 @@
 }
 .unified-extensions-item-action-button {
   justify-content: center !important;
-  --arrowpanel-menuitem-border-radius: var(--pf-border-radius);
+  --arrowpanel-menuitem-border-radius: var(--pf-border-radius-md);
   --button-background-color-ghost: var(--pf-toolbar-bgcolor);
   --uei-icon-size: 16px;
 }
@@ -69,7 +69,7 @@
   margin-bottom: 8px !important;
   padding: 4px 10px !important;
   border: 1px solid light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.125)) !important;
-  border-radius: var(--pf-border-radius) !important;
+  border-radius: var(--pf-border-radius-md) !important;
   
   @media -moz-pref("parfait.bg.accent-color") {
     background-color: color-mix(in srgb, var(--pf-accent-color), var(--pf-panel-bgcolor) 80%) !important;
@@ -92,7 +92,7 @@
     menu, menuitem {
       &:where([_moz-menuactive]:not([disabled="true"])) {
         background: color-mix(in srgb, var(--pf-accent-color), black 20%) !important;
-        color: var(--pf-menu-color) !important;
+        color: #fff !important;
       }
     }
   }
@@ -240,7 +240,7 @@ panel toolbarseparator {
 }
 #tab-group-select-checkbox,
 .tab-group-suggestion-checkbox {
-  border-radius: var(--pf-border-radius);
+  border-radius: var(--pf-border-radius-md);
   padding: 6px 8px;
   --space-small: 8px;
   
@@ -353,7 +353,7 @@ panel toolbarseparator {
   --og-padding: 8px 8px 0px;
   
   .keypoints-header {
-    border-radius: var(--pf-border-radius-small);
+    border-radius: var(--pf-border-radius-sm);
     padding: 8px;
     align-items: center;
     transition: background-color var(--pf-ts-15);
@@ -429,7 +429,7 @@ panel toolbarseparator {
 .pointerlockfswarning {
   background-color: rgba(0, 0, 0, 0.75) !important;
   padding: 14px 20px !important;
-  box-shadow: var(--pf-shadow-medium) !important;
+  box-shadow: var(--pf-shadow-md) !important;
   border: none !important;
   --border-radius-medium: 12px;
   
@@ -456,7 +456,7 @@ panel toolbarseparator {
 }
 notification-message {
   margin: 0 !important;
-  border-radius: var(--pf-border-radius) !important;
+  border-radius: var(--pf-border-radius-md) !important;
   
   &::before,
   &[style*="opacity: 0"] {
@@ -474,7 +474,7 @@ notification-message {
 #ctrlTab-panel {
   --panel-background: var(--arrowpanel-background) !important;
   --panel-color: var(--toolbox-color) !important;
-  --panel-border-radius: var(--pf-border-radius) !important;
+  --panel-border-radius: var(--pf-border-radius-md) !important;
 }
 .ctrlTab-preview,
 #ctrlTab-showAll {
@@ -482,7 +482,7 @@ notification-message {
 }
 .ctrlTab-preview-inner {
   border: 0 !important;
-  border-radius: var(--pf-border-radius) !important;
+  border-radius: var(--pf-border-radius-md) !important;
   
   .ctrlTab-preview:focus & {
     background-color: var(--toolbarbutton-hover-background) !important;
@@ -490,8 +490,8 @@ notification-message {
 }
 .ctrlTab-canvas {
   border: 1px solid var(--pf-border-color);
-  border-radius: var(--pf-border-radius-small);
-  box-shadow: var(--pf-shadow-medium) !important;
+  border-radius: var(--pf-border-radius-sm);
+  box-shadow: var(--pf-shadow-md) !important;
   overflow: hidden;
 }
 .ctrlTab-favicon-container {

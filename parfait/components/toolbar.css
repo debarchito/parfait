@@ -5,7 +5,7 @@
 
 /* toolbar items */
 toolbar .toolbarbutton-1 {
-  border-radius: var(--pf-border-radius-small);
+  border-radius: var(--pf-border-radius-sm);
   --toolbarbutton-icon-fill: var(--pf-icon-color);
   --toolbarbutton-hover-background: var(--pf-toolbar-bgcolor-hover);
   --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-active);
@@ -54,7 +54,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 }
 /* ti: align toolbar items */
 #nav-bar {
-  min-height: var(--pf-topbar-height) !important;
+  min-height: var(--pf-navbar-height) !important;
   padding-inline-start: var(--pf-separation) !important;
   align-items: center;
 
@@ -174,7 +174,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   100% { scale: 1; }
 }
 
-/* ts: prevent topbar from expanding */
+/* ts: prevent navbar from expanding */
 :root:not([customizing]) {
   #vertical-spacer {
     max-width: 0 !important;
@@ -184,7 +184,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
       content: "";
       min-width: var(--pf-sidebar-width);
       max-width: var(--pf-sidebar-width);
-      min-height: var(--pf-topbar-height);
+      min-height: var(--pf-navbar-height);
       position: fixed;
       top: 0;
       left: 0;
@@ -203,10 +203,10 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     right: var(--pf-separation);
     z-index: 3;
     min-height: 34px !important;
-    border-radius: var(--pf-border-radius-small);
+    border-radius: var(--pf-border-radius-sm);
     background-color: var(--arrowpanel-background) !important;
     border: 1px solid var(--pf-border-color) !important;
-    box-shadow: var(--pf-shadow-medium);
+    box-shadow: var(--pf-shadow-md);
     padding: 4px !important;
 
     & .titlebar-buttonbox-container {
@@ -225,8 +225,8 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     padding: 4px !important;
     background-color: var(--pf-panel-bgcolor) !important;
     border: 1px solid var(--pf-border-color) !important;
-    border-radius: var(--pf-border-radius);
-    box-shadow: var(--pf-shadow-medium);
+    border-radius: var(--pf-border-radius-md);
+    box-shadow: var(--pf-shadow-md);
     overflow: unset !important;
     opacity: 0;
     transition: var(--pf-ts-25) !important;
@@ -248,4 +248,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     &::before { top: calc(0px - var(--pf-browser-separation)); }
     &::after { bottom: calc(0px - var(--pf-browser-separation)); }
   }
+}
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  --toolbarbutton-border-radius: var(--pf-border-radius-sm);
 }
