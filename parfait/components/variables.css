@@ -14,7 +14,7 @@
   --pf-sidebar-collapsed: 52px;
   --pf-navbar-padding-block: 7px;
   --pf-toolbaritem-size: 32px;
-  --pf-toolbaritem-spacing: 2px;
+  --pf-toolbaritem-gap: 2px;
   --pf-urlbar-height: 36px;
   --pf-urlbar-width-max: 720px;
   --pf-urlbar-input-height: 56px;
@@ -79,7 +79,7 @@
   
   /* calc */
   --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
-  --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-spacing) * 3) + var(--pf-tl-width) + var(--pf-separation));
+  --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-gap) * 3) + var(--pf-tl-width) + var(--pf-separation));
   --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
   --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
   --pf-navbar-height: calc(var(--pf-toolbaritem-size) + (var(--pf-navbar-padding-block) * 2));

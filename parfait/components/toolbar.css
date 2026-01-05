@@ -64,7 +64,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 }
 #nav-bar-customization-target {
   align-items: center;
-  gap: var(--pf-toolbaritem-spacing);
+  gap: var(--pf-toolbaritem-gap);
 }
 #PanelUI-button {
   align-items: center;

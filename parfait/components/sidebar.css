@@ -430,8 +430,8 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
   :root:not([chromehidden~="toolbar"]):has(#tabbrowser-tabs:not([expanded])) {
     /* fus: left side coordinates */
     --pf-fl-btn-sidebar-x: calc(var(--pf-tl-width) + var(--pf-separation));
-    --pf-fl-btn-back-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 3) - (var(--pf-toolbaritem-spacing) * 2));
-    --pf-fl-btn-forward-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 2) - var(--pf-toolbaritem-spacing));
+    --pf-fl-btn-back-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 3) - (var(--pf-toolbaritem-gap) * 2));
+    --pf-fl-btn-forward-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 2) - var(--pf-toolbaritem-gap));
     --pf-fl-btn-reload-x: calc(var(--pf-sidebar-width) - var(--pf-toolbaritem-size));
     
     @media (not (-moz-platform: macos)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
