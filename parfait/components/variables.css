@@ -32,6 +32,7 @@
   --pf-border-radius-sm: 6px;
   --pf-urlbar-fl-radius: 12px;
   --pf-urlbar-sr-radius: 8px;
+  --pf-favicon-radius: 4px;
   --pf-window-radius: 12px;
   --pf-browser-radius: max(5px, calc(var(--pf-window-radius) - (var(--pf-separation) / 2)));
   

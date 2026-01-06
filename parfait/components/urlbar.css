@@ -343,7 +343,7 @@
   }
   /* sr: icons */
   .urlbarView-favicon {
-    border-radius: 4px;
+    border-radius: var(--pf-favicon-radius);
 
     &[src^="chrome://"] {
       fill: var(--pf-icon-color);
@@ -376,10 +376,6 @@
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, a.extensionPage) > .identity-box-button {
   padding-inline: var(--urlbar-icon-padding) !important;
 }
-#identity-box[pageproxystate="valid"]:is(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage) #identity-icon {
-  list-style-image: url("chrome://devtools/skin/images/alert.svg") !important;
-  fill: light-dark(var(--color-red-50), var(--color-red-30));
-}
 .urlbar-page-action,
 .urlbar-revert-button,
 .urlbar-go-button,
@@ -388,24 +384,7 @@
 #identity-box {
   margin-block: 2px;
 }
-.urlbar-go-button,
-.search-go-button {
-  list-style-image: var(--pf-icon-arrow-right-short) !important;
-}
-#taskbar-tabs-button > .urlbar-icon {
-  list-style-image: var(--pf-icon-install) !important;
-
-  :root[taskbartab] & {
-    list-style-image: var(--pf-icon-uninstall) !important;
-  }
-}
-#pageAction-urlbar-_testpilot-containers {
-  --pageAction-image: var(--pf-icon-container-open) !important;
-}
 /* ui: translations */
-#translations-button-icon {
-  list-style-image: var(--pf-icon-translate) !important;
-}
 #translations-button[translationsactive] {
   order: 98;
 }
