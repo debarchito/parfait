@@ -427,12 +427,13 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 }
 /* floating unified sidebar */
 @media -moz-pref("parfait.toolbar.unified-sidebar") and -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
-  :root:not([chromehidden~="toolbar"]):has(#tabbrowser-tabs:not([expanded])) {
+  :root:not([customizing], [chromehidden~="toolbar"]):has(#tabbrowser-tabs:not([expanded])) {
     /* fus: left side coordinates */
     --pf-fl-btn-sidebar-x: calc(var(--pf-tl-width) + var(--pf-separation));
     --pf-fl-btn-back-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 3) - (var(--pf-toolbaritem-gap) * 2));
     --pf-fl-btn-forward-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 2) - var(--pf-toolbaritem-gap));
     --pf-fl-btn-reload-x: calc(var(--pf-sidebar-width) - var(--pf-toolbaritem-size));
+    --pf-fl-sidebar-width: var(--pf-sidebar-width);
     
     @media (not (-moz-platform: macos)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
       --pf-tl-width: var(--pf-separation);
@@ -444,9 +445,10 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #sidebar-main {
       padding-top: calc(var(--pf-navbar-height) + var(--pf-sidebar-margin));
     }
-    /* fs: keep navbar out of the way :) */
+    /* fus: keep navbar out of the way :) */
     #nav-bar {
       top: calc(var(--pf-browser-separation) - var(--pf-navbar-height));
+      margin-left: var(--pf-separation);
       transition: top var(--pf-ts-25) var(--pf-navbar-delay) !important;
       z-index: 4;
       
@@ -489,6 +491,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #stop-reload-button,
     #vertical-spacer::before,
     #urlbar-container::before,
+    #urlbar:not([open]):hover,
     &:has(#sidebar-main:hover) #urlbar:not([open]) {
       transition: all var(--pf-ts-25) var(--pf-fx-sidebar) !important;
     }
@@ -496,7 +499,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       .titlebar-buttonbox-container {
         position: fixed;
         top: var(--pf-separation);
-        left: calc(0px - var(--pf-sidebar-width));
+        left: calc(0px - var(--pf-fl-sidebar-width));
       }
     }
     #sidebar-button,
@@ -504,32 +507,32 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #forward-button,
     #stop-reload-button {
       position: fixed;
-      top: calc(var(--pf-separation) + (var(--pf-navbar-height) - var(--pf-toolbaritem-size)) / 2);
+      top: calc(var(--pf-separation) + var(--pf-navbar-padding-block));
     }
     #vertical-spacer::before {
       position: fixed;
       top: var(--pf-separation);
-      left: calc(0px - var(--pf-sidebar-width));
+      left: calc(0px - var(--pf-fl-sidebar-width));
     }
     #sidebar-button {
-      left: calc(var(--pf-fl-btn-sidebar-x) - var(--pf-sidebar-width));
+      left: calc(var(--pf-fl-btn-sidebar-x) - var(--pf-fl-sidebar-width));
     }
     #back-button {
-      left: calc(var(--pf-fl-btn-back-x) - var(--pf-sidebar-width));
+      left: calc(var(--pf-fl-btn-back-x) - var(--pf-fl-sidebar-width));
     }
     #forward-button {
-      left: calc(var(--pf-fl-btn-forward-x) - var(--pf-sidebar-width));
+      left: calc(var(--pf-fl-btn-forward-x) - var(--pf-fl-sidebar-width));
     }
     #stop-reload-button {
-      left: calc(var(--pf-fl-btn-reload-x) - var(--pf-sidebar-width));
+      left: calc(var(--pf-fl-btn-reload-x) - var(--pf-fl-sidebar-width));
     }
     #urlbar:not([open]),
     #urlbar-container::before {
-      --pf-urlbar-x: calc((var(--pf-separation) * 2) - var(--pf-sidebar-width));
+      --pf-urlbar-x: calc((var(--pf-separation) * 2) - var(--pf-fl-sidebar-width));
       --pf-urlbar-y: calc(var(--pf-navbar-height) + var(--pf-separation));
     }
     /* fus: hover state */
-    @media not -moz-pref("parfait.traffic-lights.enabled") {
+    @media (not (-moz-platform: macos)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
       &:has(
         #sidebar-main:hover, #vertical-spacer:hover, #sidebar-button:hover,
         #back-button:hover, #forward-button:hover, #stop-reload-button:hover,
@@ -543,11 +546,8 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
         #vertical-spacer::before {
           left: var(--pf-separation);
         }
-        #sidebar-button,
-        #back-button,
-        #forward-button,
-        #stop-reload-button {
-          --pf-sidebar-width: 0px;
+        #nav-bar {
+          --pf-fl-sidebar-width: 0px;
         }
         #urlbar:not([open]),
         #urlbar-container::before {
@@ -571,11 +571,8 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
         .titlebar-buttonbox-container {
           left: var(--pf-separation);
         }
-        #sidebar-button,
-        #back-button,
-        #forward-button,
-        #stop-reload-button {
-          --pf-sidebar-width: 0px;
+        #nav-bar {
+          --pf-fl-sidebar-width: 0px;
         }
         #urlbar:not([open]),
         #urlbar-container::before {
