@@ -158,12 +158,16 @@ spacer[part="overflow-end-indicator"],
     }
   }
   .tab-background {
+    outline: none !important;
     --tab-min-height: var(--pf-tab-height);
     --tab-selected-bgcolor: light-dark(rgba(255, 255, 255, 0.8), rgba(238, 239, 243, 0.2));
     --tab-selected-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 1px 1px rgba(0, 0, 0, 0.09);
     --tab-inner-inline-margin: var(--pf-separation);
-    outline: none !important;
     
+    @media not -moz-pref("parfait.tabs.groups.color") {
+      --dragover-tab-group-color-pale: var(--pf-toolbar-bgcolor-hover);
+      --dragover-tab-group-color: var(--pf-toolbar-bgcolor-hover);
+    }
     &[multiselected]:not([selected]) {
       --tab-selected-bgcolor: var(--pf-toolbar-bgcolor-hover);
       box-shadow: none !important;
