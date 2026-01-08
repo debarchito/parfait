@@ -139,7 +139,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     position: fixed;
     top: var(--pf-separation);
     right: var(--pf-separation);
-    z-index: 3;
+    z-index: 5;
     min-height: 34px !important;
     border-radius: var(--pf-border-radius-sm);
     background-color: var(--arrowpanel-background) !important;
