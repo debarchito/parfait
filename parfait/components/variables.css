@@ -70,7 +70,8 @@
   /* traffic lights */
   --pf-tl-size: 12px;
   --pf-tl-margin: var(--pf-tl-width);
-  --pf-tl-padding-inline: 14px 4px;
+  --pf-tl-padding-left: 14px;
+  --pf-tl-padding-right: 4px;
   --pf-tl-gap: 8px;
   --pf-tl-min-color: #febc2e;
   --pf-tl-max-color: #28c840;
@@ -79,7 +80,7 @@
   --pf-tl-mono: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
   
   /* calc */
-  --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + 18px);
+  --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + (var(--pf-tl-padding-left) + var(--pf-tl-padding-right)));
   --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-gap) * 3) + var(--pf-tl-width) + var(--pf-separation));
   --pf-sidebar-gutter: calc((var(--pf-sidebar-width) - var(--pf-sidebar-min)) + var(--pf-tl-margin));
   --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
@@ -94,7 +95,8 @@
   
   /* horizontal layout */
   @media not -moz-pref("sidebar.verticalTabs") {
-    --pf-tl-padding-inline: 16px 10px;
+    --pf-tl-padding-left: 16px;
+    --pf-tl-padding-right: 10px;
   }
   
   /* density: compact mode */
@@ -109,7 +111,14 @@
   &[uidensity="touch"] {
     --pf-tab-height: 40px;
     --pf-toolbaritem-size: 34px;
-    --pf-urlbar-height: 36px;
+  }
+  
+  /* popup windows and taskbar tabs */
+  &:is([chromehidden~="toolbar"], [taskbartab]) {
+    --pf-tl-padding-left: 16px;
+    --pf-tl-padding-right: 10px;
+    --pf-navbar-padding-block: 6px;
+    --pf-urlbar-height: var(--pf-toolbaritem-size);
   }
   
   /* bg: opacity */

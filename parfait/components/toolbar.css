@@ -190,3 +190,17 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 toolbarbutton.bookmark-item:not(.subviewbutton) {
   --toolbarbutton-border-radius: var(--pf-border-radius-sm);
 }
+
+/* taskbar tabs */
+:root[taskbartab] {
+  .titlebar-spacer[type="post-tabs"],
+  toolbarspring {
+    display: none;
+  }
+  #taskbar-tabs-favicon {
+    border-radius: var(--pf-favicon-radius);
+  }
+  .urlbar-background {
+    --pf-toolbar-bgcolor: transparent !important;
+  }
+}

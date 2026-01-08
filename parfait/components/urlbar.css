@@ -4,49 +4,51 @@
 */
 
 /* urlbar */
-:root:not([customizing], [chromehidden~="toolbar"]) {
+#urlbar:not([open]) {
+  height: var(--pf-urlbar-height) !important;
+
+  .urlbar-background {
+    border: 0 !important;
+    border-radius: var(--pf-border-radius-md) !important;
+    transition: background-color var(--pf-ts-25);
+    --toolbar-field-background-color: var(--pf-toolbar-bgcolor);
+    --toolbar-field-color: var(--lwt-text-color);
+
+    #urlbar:hover & {
+      --toolbar-field-background-color: var(--pf-toolbar-bgcolor-hover);
+    }
+  }
+  &[focused] .urlbar-background {
+    box-shadow: inset 0 0 0 1px var(--pf-accent-color), 0 0 0 2px color-mix(in srgb, var(--pf-accent-color), transparent 50%) !important;
+    outline: none !important;
+  }
+}
+:root:not([customizing]) {
   --pf-urlbar-x: var(--pf-separation);
   --pf-urlbar-y: var(--pf-navbar-height);
 
-  #urlbar:not([open]) {
-    height: var(--pf-urlbar-height) !important;
-    
-    .urlbar-background {
-      border: 0 !important;
-      border-radius: var(--pf-border-radius-md) !important;
-      transition: background-color var(--pf-ts-25);
-      --toolbar-field-background-color: var(--pf-toolbar-bgcolor);
-      --toolbar-field-color: var(--lwt-text-color);
-
-      #urlbar:hover & {
-        --toolbar-field-background-color: var(--pf-toolbar-bgcolor-hover);
-      }
-    }
-    &[focused] .urlbar-background {
-      box-shadow: inset 0 0 0 1px var(--pf-accent-color), 0 0 0 2px color-mix(in srgb, var(--pf-accent-color), transparent 50%) !important;
-      outline: none !important;
-    }
-  }
   /* mini urlbar */
-  @media -moz-pref("sidebar.verticalTabs") and -moz-pref("parfait.toolbar.unified-sidebar") and (not -moz-pref("sidebar.visibility", "expand-on-hover")) {
-    #urlbar:not([open]),
-    #urlbar-container::before {
-      position: fixed !important;
-      left: var(--pf-urlbar-x) !important;
-      top: var(--pf-urlbar-y) !important;
-      width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
-      max-width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
-    }
-    /* allow top bar dragging */
-    #urlbar-container { -moz-window-dragging: drag; }
-  }
-  @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "always-show") {
-    &:has(#tabbrowser-tabs:not([expanded])) {
+  &:not([chromehidden~="toolbar"], [taskbartab]) {
+    @media -moz-pref("sidebar.verticalTabs") and -moz-pref("parfait.toolbar.unified-sidebar") and (not -moz-pref("sidebar.visibility", "expand-on-hover")) {
       #urlbar:not([open]),
       #urlbar-container::before {
-        inset: unset !important;
-        width: var(--urlbar-width) !important;
-        max-width: unset !important;
+        position: fixed !important;
+        left: var(--pf-urlbar-x) !important;
+        top: var(--pf-urlbar-y) !important;
+        width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
+        max-width: calc(var(--pf-sidebar-width) - (var(--pf-separation) * 2)) !important;
+      }
+      /* allow top bar dragging */
+      #urlbar-container { -moz-window-dragging: drag; }
+    }
+    @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "always-show") {
+      &:has(#tabbrowser-tabs:not([expanded])) {
+        #urlbar:not([open]),
+        #urlbar-container::before {
+          inset: unset !important;
+          width: var(--urlbar-width, 100%) !important;
+          max-width: unset !important;
+        }
       }
     }
   }

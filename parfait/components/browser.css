@@ -87,7 +87,7 @@
 }
 
 /* separation */
-:root:not([inDOMFullscreen], [chromehidden~="toolbar"]) {
+:root:not([inDOMFullscreen], [chromehidden~="toolbar"], [taskbartab]) {
   #tabbrowser-tabbox {
     margin-inline-end: var(--pf-browser-separation) !important;
     border-radius: var(--pf-browser-radius) !important;
