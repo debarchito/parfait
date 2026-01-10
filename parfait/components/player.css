@@ -128,6 +128,10 @@
       border-radius: 4px 0 0 4px !important;
     }
   }
+  #scrubber:hover::-moz-range-track,
+  #scrubber:hover::-moz-range-progress {
+    height: 8px !important;
+  }
   #scrubber::-moz-range-progress,
   #scrubber::-moz-range-thumb {
     background-color: var(--pf-accent-color) !important;
