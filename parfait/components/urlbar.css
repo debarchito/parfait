@@ -141,11 +141,11 @@
       margin-inline: 1px 10px !important;
     }
     #userContext-icons {
-      background-color: color-mix(in srgb, var(--identity-tab-color), transparent 80%);
+      background-color: color-mix(in srgb, var(--identity-tab-color), transparent 85%);
       color: color-mix(in srgb, var(--identity-icon-color), var(--pf-text-color));
       margin-inline-end: 0 !important;
-      padding: 6px 8px;
-      border-radius: var(--pf-border-radius-sm);
+      padding: 6px 10px;
+      border-radius: var(--urlbar-inner-border-radius);
 
       #userContext-label {
         font-size: 1rem !important;
@@ -271,6 +271,15 @@
       display: none;
     }
   }
+  /* sr: tab to search */
+  &[type="tabtosearch"] {
+    .urlbarView-title {
+      font-weight: 600;
+    }
+    .urlbarView-action {
+      display: none !important;
+    }
+  }
   /* sr: switch tab */
   &[type="switchtab"] {
     .urlbarView-no-wrap {
@@ -298,7 +307,6 @@
         border-radius: calc(var(--pf-urlbar-sr-radius) - 4px);
       }
     }
-    /* sr: selected item */
     &[selected] {
       .urlbarView-switchToTab {
         color: var(--pf-text-color);
@@ -357,6 +365,12 @@
     }
     &[src="chrome://global/skin/icons/edit-copy.svg"] {
       content: var(--pf-icon-copy);
+    }
+    &[src="chrome://browser/skin/bookmark.svg"] {
+      content: url(chrome://browser/skin/bookmark-hollow.svg);
+    }
+    &[src="chrome://browser/skin/tabs.svg"] {
+      content: var(--pf-icon-tabs);
     }
   }
   .urlbarView-button {
