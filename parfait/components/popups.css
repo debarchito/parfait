@@ -168,7 +168,7 @@ panel toolbarseparator {
     
     &::before {
       content: var(--pf-icon-tabs);
-      fill: var(--color-accent-primary);
+      fill: var(--pf-accent-text-color);
       -moz-context-properties: fill;
     }
   }
@@ -260,7 +260,7 @@ panel toolbarseparator {
   
   &::before {
     content: var(--pf-icon-translate);
-    fill: var(--color-accent-primary);
+    fill: var(--pf-accent-text-color);
     -moz-context-properties: fill;
   }
 }
@@ -369,7 +369,7 @@ panel toolbarseparator {
       order: 1;
     }
     img.icon {
-      fill: var(--color-accent-primary) !important;
+      fill: var(--pf-accent-text-color) !important;
       margin-right: 8px;
       order: -1;
       --space-xlarge: 0;

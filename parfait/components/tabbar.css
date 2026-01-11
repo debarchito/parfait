@@ -188,13 +188,7 @@ spacer[part="overflow-end-indicator"],
   }
   .tab-content {
     padding-inline: calc(var(--tab-inline-padding) + var(--pf-separation) - 8px) !important;
-  }
-  .tab-label {
-    color: var(--pf-text-color);
-    
-    &:-moz-window-inactive {
-      color: var(--pf-text-inactive-color);
-    }
+    --tab-selected-textcolor: var(--pf-text-color);
   }
   &[expanded] {
     --tab-icon-end-margin: 10px !important;

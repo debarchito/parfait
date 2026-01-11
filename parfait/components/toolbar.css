@@ -6,7 +6,6 @@
 /* toolbar items */
 toolbar .toolbarbutton-1 {
   border-radius: var(--pf-border-radius-sm);
-  --toolbarbutton-icon-fill: var(--pf-icon-color);
   --toolbarbutton-hover-background: var(--pf-toolbar-bgcolor-hover);
   --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-active);
 }

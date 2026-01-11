@@ -13,6 +13,7 @@
   }
   @media -moz-pref("parfait.bg.accent-color") {
     --toolbox-bgcolor: color-mix(in oklab, transparent, var(--pf-browser-bgcolor) var(--pf-browser-opacity)) !important;
+    --toolbox-bgcolor-inactive: color-mix(in oklab, var(--pf-browser-bgcolor), var(--color-gray-50) 30%) !important;
     --pf-sidebar-bgcolor-1: var(--pf-browser-bgcolor);
     --pf-sidebar-bgcolor-2: var(--pf-browser-bgcolor);
     

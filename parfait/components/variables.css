@@ -48,8 +48,8 @@
   --pf-sidebar-bgcolor-2: light-dark(rgb(248, 248, 248), rgb(21, 21, 21));
   --pf-panel-bgcolor: light-dark(rgb(255, 255, 255), rgb(21, 21, 21));
   --pf-panel-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.925));
-  --pf-text-color: color-mix(in srgb, var(--toolbar-color), transparent 20%);
-  --pf-text-color-inactive: color-mix(in srgb, var(--toolbar-color), transparent 50%);
+  --pf-text-color: color-mix(in srgb, var(--toolbar-color), transparent 10%);
+  --pf-text-color-inactive: color-mix(in srgb, var(--pf-text-color), transparent 30%);
   --pf-icon-color: light-dark(rgba(91, 91, 102, 0.9), rgba(251, 251, 254, 0.8));
   --pf-icon-color-active: color-mix(in srgb, var(--pf-icon-color), var(--toolbar-color) 60%);
   --pf-input-bgcolor: light-dark(rgba(0, 0, 0, 0.02), rgba(248, 248, 248, 0.04));
@@ -59,11 +59,11 @@
   --pf-toolbar-bgcolor-inactive: light-dark(rgba(0, 0, 0, 0.04), rgba(248, 248, 248, 0.075));
   --pf-urlbar-bgcolor: light-dark(white, #191a1a);
   --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.875));
-  --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
   --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
   
   /* shadows */
+  --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --pf-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
   
@@ -203,4 +203,15 @@
   --button-background-color: var(--pf-toolbar-bgcolor) !important;
   --button-background-color-hover: var(--pf-toolbar-bgcolor-hover) !important;
   --button-background-color-active: var(--pf-toolbar-bgcolor-active) !important;
+  --toolbox-textcolor: var(--pf-text-color) !important;
+  --toolbox-textcolor-inactive: var(--pf-text-color-inactive) !important;
+  --toolbar-field-color: var(--pf-text-color) !important;
+  --toolbar-field-focus-color: var(--pf-text-color) !important;
+  --sidebar-box-color: var(--pf-text-color) !important;
+  
+  &:not([lwtheme]) {
+    --color-accent-primary: var(--pf-accent-text-color) !important;
+    --link-color: var(--pf-accent-text-color) !important;
+    --toolbarbutton-icon-fill: var(--pf-icon-color) !important;
+  }
 }
