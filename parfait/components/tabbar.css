@@ -226,6 +226,12 @@ spacer[part="overflow-end-indicator"],
   .tab-icon-image {
     border-radius: var(--pf-favicon-radius);
     overflow: hidden;
+
+    &:not([src]),
+    &:-moz-broken {
+      fill: var(--pf-favicon-bgcolor) !important;
+      content: var(--pf-icon-square) !important;
+    }
   }
 }
 @keyframes tab-select {
