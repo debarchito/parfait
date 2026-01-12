@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - findbar.css
   https://github.com/reizumii/parfait
 */
@@ -17,7 +17,7 @@
   transition: top var(--pf-ts-25) !important;
   animation: findbar-show var(--pf-ts-25);
   visibility: visible !important;
-  
+
   &[hidden] {
     display: flex !important;
     top: -100px;
@@ -46,7 +46,7 @@
     padding: 8px;
     border-bottom: 1px solid var(--pf-border-color);
     gap: 4px;
-    
+
     .findbar-textbox {
       width: calc((var(--pf-findbar-width) - (16px * 2)) - (24px * 3)) !important;
       background: none !important;
@@ -63,7 +63,7 @@
   }
   checkbox {
     margin: 8px 3px !important;
-    
+
     &:hover .checkbox-label-box {
       background-color: var(--pf-toolbar-bgcolor-hover);
     }
@@ -81,7 +81,7 @@
       display: block !important;
       fill: var(--pf-text-color);
       -moz-context-properties: fill;
-      
+
       .findbar-highlight & {
         content: var(--pf-icon-search-highlight);
       }

@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - urlbar.css
   https://github.com/reizumii/parfait
 */
@@ -55,7 +55,7 @@
   }
   #urlbar:not([open]) {
     --urlbar-inner-border-radius: max(var(--pf-border-radius-sm), calc(var(--pf-border-radius-md) - 3px));
-    
+
     /* urlbar items */
     #userContext-label,
     #identity-box:not([pageproxystate="invalid"]):not(.notSecure) #identity-icon-box:not([open]),
@@ -410,7 +410,7 @@
 }
 #translations-button-circle-arrows {
   transition: all var(--pf-ts-15);
-  
+
   &[hidden] {
     display: unset;
     width: 0 !important;

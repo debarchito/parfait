@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - variables.css
   https://github.com/reizumii/parfait
 
@@ -26,7 +26,7 @@
   --pf-findbar-width: 320px;
   --pf-extensions-width: 228px;
   --pf-tab-group-preview-width: 260px;
-  
+
   /* corner radii */
   --pf-border-radius-md: 12px;
   --pf-border-radius-sm: 6px;
@@ -35,7 +35,7 @@
   --pf-favicon-radius: 4px;
   --pf-window-radius: 12px;
   --pf-browser-radius: max(5px, calc(var(--pf-window-radius) - (var(--pf-separation) / 2)));
-  
+
   /* colors */
   --pf-accent-color: AccentColor;
   --pf-accent-text-color: color-mix(in srgb, var(--pf-accent-color), var(--pf-text-color) 30%);
@@ -62,12 +62,12 @@
   --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.875));
   --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
   --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
-  
+
   /* shadows */
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
   --pf-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --pf-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.075), 0 24px 48px rgba(0, 0, 0, 0.175);
-  
+
   /* traffic lights */
   --pf-tl-size: 12px;
   --pf-tl-margin: var(--pf-tl-width);
@@ -79,7 +79,7 @@
   --pf-tl-close-color: #ff5f57;
   --pf-tl-border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
   --pf-tl-mono: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
-  
+
   /* calc */
   --pf-tl-width: calc((var(--pf-tl-size) * 3) + (var(--pf-tl-gap) * 2) + (var(--pf-tl-padding-left) + var(--pf-tl-padding-right)));
   --pf-sidebar-min: calc((var(--pf-toolbaritem-size) * 4) + (var(--pf-toolbaritem-gap) * 3) + var(--pf-tl-width) + var(--pf-separation));
@@ -89,17 +89,17 @@
   --pf-navbar-margin: calc(var(--pf-browser-separation) - var(--pf-navbar-height));
   --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + var(--pf-separation));
   --pf-fl-trigger-sum: calc(var(--pf-separation) + var(--pf-fl-trigger-width));
-  
+
   /* other */
   --pf-background-filter: blur(8px);
   --pf-acrylic-filter: blur(72px) brightness(1.6) saturate(1.4);
-  
+
   /* horizontal layout */
   @media not -moz-pref("sidebar.verticalTabs") {
     --pf-tl-padding-left: 16px;
     --pf-tl-padding-right: 10px;
   }
-  
+
   /* density: compact mode */
   &[uidensity="compact"] {
     --pf-tab-height: 30px;
@@ -113,7 +113,7 @@
     --pf-tab-height: 40px;
     --pf-toolbaritem-size: 34px;
   }
-  
+
   /* popup windows and taskbar tabs */
   &:is([chromehidden~="toolbar"], [taskbartab]) {
     --pf-tl-padding-left: 16px;
@@ -121,26 +121,26 @@
     --pf-navbar-padding-block: 6px;
     --pf-urlbar-height: var(--pf-toolbaritem-size);
   }
-  
+
   /* bg: opacity */
   @media -moz-pref("parfait.bg.opacity", 1) { --pf-browser-opacity: 25%; }
   @media -moz-pref("parfait.bg.opacity", 2) { --pf-browser-opacity: 50%; }
   @media -moz-pref("parfait.bg.opacity", 3) { --pf-browser-opacity: 75%; }
   @media -moz-pref("parfait.bg.opacity", 4) { --pf-browser-opacity: 100%; }
-  
+
   /* bg: contrast */
   @media -moz-pref("parfait.bg.contrast", 1) { --pf-browser-contrast: 75%; }
   @media -moz-pref("parfait.bg.contrast", 2) { --pf-browser-contrast: 50%; }
   @media -moz-pref("parfait.bg.contrast", 3) { --pf-browser-contrast: 25%; }
   @media -moz-pref("parfait.bg.contrast", 4) { --pf-browser-contrast: 0%; }
-  
+
   /* preset: sidebar width */
   @media -moz-pref("parfait.sidebar.width.preset", 1) { --pf-sidebar-width: 220px; }
   @media -moz-pref("parfait.sidebar.width.preset", 2) { --pf-sidebar-width: 240px; }
   @media -moz-pref("parfait.sidebar.width.preset", 3) { --pf-sidebar-width: 260px; }
   @media -moz-pref("parfait.sidebar.width.preset", 4) { --pf-sidebar-width: 280px; }
   @media -moz-pref("parfait.sidebar.width.preset", 5) { --pf-sidebar-width: 300px; }
-  
+
   /* preset: roundness */
   @media -moz-pref("parfait.theme.roundness.preset", 1) {
     --pf-border-radius-md: 12px;
@@ -150,12 +150,12 @@
     --pf-border-radius-md: 6px;
     --pf-border-radius-sm: 4px;
   }
-  
+
   /* browser radius */
   @media (-moz-platform: windows) { --pf-window-radius: 8px; }
   @media (-moz-platform: macos) or (-moz-gtk-theme-family: adwaita) or (-moz-gtk-theme-family: yaru) { --pf-window-radius: 12px; }
   @media (-moz-mac-tahoe-theme) { --pf-window-radius: 16px; }
-  
+
   /* traffic lights */
   @media -moz-pref("parfait.traffic-lights.enabled") { --pf-tl-margin: 0px; }
   @media (-moz-platform: macos) { --pf-tl-margin: -2px; }
@@ -163,38 +163,38 @@
     --pf-tl-size: 14px;
     --pf-tl-margin: -8px;
   }
-  
+
   /* borderless */
   @media -moz-pref("parfait.window.borderless") {
     --pf-navbar-margin: calc(0px - var(--pf-navbar-height));
   }
-  
+
   /* animation */
   --pf-ts-15: 0.15s;
   --pf-ts-25: 0.25s;
   --pf-ts-50: 0.50s;
   --pf-ts-65: 0.65s;
-  
+
   @media -moz-pref("parfait.animations.enabled", false) or (prefers-reduced-motion: reduce) {
     --pf-ts-15: 0s;
     --pf-ts-25: 0s;
     --pf-ts-50: 0s;
     --pf-ts-65: 0s;
   }
-  
+
   /* effects */
   --pf-fx-bounce: cubic-bezier(0.47, 1.84 , 0.41, 0.8);
   --pf-fx-sidebar: cubic-bezier(0.125, 1.125, 0.25, 1.0125);
   --pf-fx-folder: cubic-bezier(0.42, 0, 0, 1);
-  
+
   /* timings */
   --pf-navbar-delay: 0.15s;
-  
+
   /* firefox */
   --border-radius-small: var(--pf-border-radius-sm) !important;
   --border-radius-medium: var(--pf-border-radius-md) !important;
   --urlbar-icon-border-radius: var(--pf-border-radius-sm) !important;
-  
+
   --focus-outline-color: var(--pf-accent-color) !important;
   --urlbar-box-bgcolor: transparent !important;
   --urlbar-box-focus-bgcolor: transparent !important;
@@ -209,7 +209,7 @@
   --toolbar-field-color: var(--pf-text-color) !important;
   --toolbar-field-focus-color: var(--pf-text-color) !important;
   --sidebar-box-color: var(--pf-text-color) !important;
-  
+
   &:not([lwtheme]) {
     --color-accent-primary: var(--pf-accent-text-color) !important;
     --link-color: var(--pf-accent-text-color) !important;

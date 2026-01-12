@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - toolbar.css
   https://github.com/reizumii/parfait
 */
@@ -15,7 +15,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   max-width: var(--pf-toolbaritem-size);
   max-height: var(--pf-toolbaritem-size);
   padding: 0 !important;
-  
+
   .toolbarbutton-icon {
     transition: var(--pf-ts-25);
     transition-timing-function: var(--pf-fx-bounce) !important;
@@ -133,7 +133,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   #nav-bar-customization-target > :is(toolbarbutton, toolbaritem) {
     z-index: 2;
   }
-  
+
   /* menu bar */
   #toolbar-menubar:not([inactive]) {
     position: fixed;
@@ -151,7 +151,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
       display: none;
     }
   }
-  
+
   /* bookmarks toolbar */
   #PersonalToolbar {
     position: fixed;
@@ -169,7 +169,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     opacity: 0;
     transition: var(--pf-ts-25) !important;
     transition-delay: var(--pf-ts-25) !important;
-    
+
     &:hover,
     &:has(.bookmark-item[open]) {
       opacity: 1;

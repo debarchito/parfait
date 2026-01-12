@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - tabbar.css
   https://github.com/reizumii/parfait
 */
@@ -13,7 +13,7 @@
 #tabbrowser-arrowscrollbox[orient="vertical"]  {
   #tabbrowser-arrowscrollbox-periphery {
     margin-top: calc(var(--pf-separation) / 2);
-    
+
     #tabs-newtab-button {
       margin-top: 6px !important;
     }
@@ -30,7 +30,7 @@
   position: relative;
   margin-block: calc(var(--pf-separation) / 2) var(--pf-separation) !important;
   opacity: 1 !important;
-  
+
   & > .toolbarbutton-icon,
   & > .toolbarbutton-text {
     opacity: 0.4;
@@ -61,7 +61,7 @@ spacer[part="overflow-end-indicator"],
 /* tabs: collapsed mode */
 #tabbrowser-tabs[orient="vertical"]:not([expanded]) {
   --tab-collapsed-background-width: var(--pf-tab-height);
-  
+
   .tab-group-label {
     min-width: var(--pf-tab-height) !important;
   }
@@ -70,7 +70,7 @@ spacer[part="overflow-end-indicator"],
 /* tabs: pinned tabs */
 #pinned-tabs-container[orient="vertical"] {
   margin-block: -2px -4px;
-  
+
   @media not -moz-pref("sidebar.visibility", "expand-on-hover") {
     #sidebar-main[hidden] &,
     #tabbrowser-tabs[expanded] & {
@@ -108,7 +108,7 @@ spacer[part="overflow-end-indicator"],
 #tabbrowser-tabs[orient="vertical"] {
   .tabbrowser-tab {
     padding-block: 0 !important;
-    
+
     .tab-icon-image {
       transition: scale var(--pf-ts-15), opacity var(--pf-ts-15) !important;
     }
@@ -163,7 +163,7 @@ spacer[part="overflow-end-indicator"],
     --tab-selected-bgcolor: light-dark(rgba(255, 255, 255, 0.8), rgba(238, 239, 243, 0.2));
     --tab-selected-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 1px 1px rgba(0, 0, 0, 0.09);
     --tab-inner-inline-margin: var(--pf-separation);
-    
+
     @media not -moz-pref("parfait.tabs.groups.color") {
       --dragover-tab-group-color-pale: var(--pf-toolbar-bgcolor-hover);
       --dragover-tab-group-color: var(--pf-toolbar-bgcolor-hover);
@@ -181,7 +181,7 @@ spacer[part="overflow-end-indicator"],
   }
   .tab-stack {
     transition: scale var(--pf-ts-15);
-    
+
     .tabbrowser-tab[selected]:hover:active:not(:has(.tab-audio-button:active, .tab-close-button:active)) & {
       scale: 0.985;
     }
@@ -208,7 +208,7 @@ spacer[part="overflow-end-indicator"],
   .tab-close-button,
   .tab-audio-button {
     transition: scale var(--pf-ts-15);
-    
+
     &:hover:active { scale: 0.9175; }
   }
   .tab-icon-overlay[soundplaying] {
@@ -290,13 +290,13 @@ spacer[part="overflow-end-indicator"],
     color: var(--pf-text-color) !important;
     transition: var(--pf-ts-15) !important;
     --tab-border-radius: var(--pf-border-radius-md);
-    
+
     /* folder colors */
     --pf-folder-color-1: var(--toolbar-bgcolor);
     --pf-folder-color-2: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%);
     --pf-folder-color-bg: color-mix(in srgb, var(--pf-folder-color-1), light-dark(white, black) 95%);
     --pf-folder-color-fg: light-dark(color-mix(in srgb, var(--pf-folder-color-2), black 40%), color-mix(in srgb, var(--pf-folder-color-2), white 40%));
-    
+
     &:-moz-window-inactive {
       color: var(--pf-text-inactive-color) !important;
     }
@@ -348,11 +348,11 @@ spacer[part="overflow-end-indicator"],
   }
   tab-group {
     --tab-group-line-color: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%) !important;
-    
+
     /* folders: accent color */
     @media -moz-pref("parfait.bg.accent-color") {
       --tab-group-line-color: color-mix(in srgb, var(--pf-accent-color), var(--toolbar-color) 30%) !important;
-      
+
       .tab-group-label {
         --pf-folder-color-1: var(--pf-accent-color);
         --pf-folder-color-2: light-dark(var(--pf-accent-color), color-mix(in srgb, var(--pf-accent-color), white 60%));
@@ -370,7 +370,7 @@ spacer[part="overflow-end-indicator"],
       max-height: calc(var(--pf-tab-height) + 4px);
       transition-property: min-height, max-height, opacity !important;
       transition-duration: var(--pf-ts-15) !important;
-      
+
       #tabbrowser-tabs[movingtab] &:not(:is([selected], [multiselected])) {
         transition: var(--pf-ts-15) !important;
       }
@@ -390,7 +390,7 @@ spacer[part="overflow-end-indicator"],
     max-width: 100% !important;
     margin-block: 2px !important;
     margin-inline: var(--pf-separation) !important;
-    
+
     #tabbrowser-tabs[orient="vertical"] & {
       tab-group:not([collapsed]) > &, tab-group[collapsed][hasactivetab] > & {
         padding-block-end: 2px !important;

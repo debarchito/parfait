@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - popups.css
   https://github.com/reizumii/parfait
 */
@@ -12,7 +12,7 @@
 }
 #unified-extensions-view {
   --menu-panel-width-wide: var(--pf-extensions-width) !important;
-  
+
   toolbarseparator,
   .panel-header {
     display: none !important;
@@ -32,7 +32,7 @@
 .unified-extensions-list {
   margin-top: 8px;
   filter: grayscale(1);
-  
+
   .unified-extensions-item {
     background-color: color-mix(in srgb, var(--pf-toolbar-bgcolor), transparent 70%);
     border-radius: var(--pf-border-radius-md) !important;
@@ -57,7 +57,7 @@
 }
 #unified-extensions-manage-extensions {
   border: 1px solid var(--pf-border-color);
-  
+
   .toolbarbutton-text {
     text-align: center !important;
   }
@@ -70,7 +70,7 @@
   padding: 4px 10px !important;
   border: 1px solid light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.125)) !important;
   border-radius: var(--pf-border-radius-md) !important;
-  
+
   @media -moz-pref("parfait.bg.accent-color") {
     background-color: color-mix(in srgb, var(--pf-accent-color), var(--pf-panel-bgcolor) 80%) !important;
   }
@@ -113,7 +113,7 @@
   #context-navigation {
     flex-direction: column;
     align-items: start;
-    
+
     .menuitem-iconic {
       width: calc(100% - (var(--menuitem-margin-inline) * 2));
       justify-content: start !important;
@@ -151,7 +151,7 @@ panel toolbarseparator {
 }
 #appMenu-fullscreen-button2 {
   list-style-image: var(--pf-icon-fullscreen) !important;
-  
+
   &[checked] {
     list-style-image: var(--pf-icon-fullscreen-exit) !important;
   }
@@ -165,7 +165,7 @@ panel toolbarseparator {
     justify-content: unset !important;
     --heading-font-size-xlarge: var(--pf-font-size-1);
     --arrowpanel-menuitem-margin-inline: 4px 0;
-    
+
     &::before {
       content: var(--pf-icon-tabs);
       fill: var(--pf-accent-text-color);
@@ -226,7 +226,7 @@ panel toolbarseparator {
   padding-block-start: 6px;
   background-color: var(--pf-input-bgcolor);
   border-top: 1px solid var(--pf-border-color-light);
-  
+
   & > p {
     color: var(--pf-text-color-inactive);
   }
@@ -243,7 +243,7 @@ panel toolbarseparator {
   border-radius: var(--pf-border-radius-md);
   padding: 6px 8px;
   --space-small: 8px;
-  
+
   &:hover {
     background-color: var(--pf-toolbar-bgcolor-hover);
   }
@@ -257,7 +257,7 @@ panel toolbarseparator {
   display: flex;
   gap: 8px;
   --heading-font-size-xlarge: var(--pf-font-size-1);
-  
+
   &::before {
     content: var(--pf-icon-translate);
     fill: var(--pf-accent-text-color);
@@ -342,7 +342,7 @@ panel toolbarseparator {
   top: 8px;
   right: 8px;
   border-radius: 999px;
-  
+
   .og-card-content:has(> .og-card-img) & {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: var(--pf-background-filter);
@@ -351,14 +351,14 @@ panel toolbarseparator {
 }
 .ai-content {
   --og-padding: 8px 8px 0px;
-  
+
   .keypoints-header {
     border-radius: var(--pf-border-radius-sm);
     padding: 8px;
     align-items: center;
     transition: background-color var(--pf-ts-15);
     --og-main-font-size: var(--pf-font-size-1);
-    
+
     &:hover {
       background-color: var(--pf-toolbar-bgcolor-hover);
     }
@@ -378,7 +378,7 @@ panel toolbarseparator {
   .keypoints-content {
     padding-block-end: 16px;
     padding-inline: 8px 12px !important;
-    
+
     &.hidden {
       padding-block-end: 8px;
     }
@@ -432,7 +432,7 @@ panel toolbarseparator {
   box-shadow: var(--pf-shadow-md) !important;
   border: none !important;
   --border-radius-medium: 12px;
-  
+
   &:is([data-identity="verifiedDomain"], [data-identity="unknownIdentity"])::before {
     width: 16px !important;
     height: 16px !important;
@@ -457,7 +457,7 @@ panel toolbarseparator {
 notification-message {
   margin: 0 !important;
   border-radius: var(--pf-border-radius-md) !important;
-  
+
   &::before,
   &[style*="opacity: 0"] {
     display: none !important;
@@ -483,7 +483,7 @@ notification-message {
 .ctrlTab-preview-inner {
   border: 0 !important;
   border-radius: var(--pf-border-radius-md) !important;
-  
+
   .ctrlTab-preview:focus & {
     background-color: var(--toolbarbutton-hover-background) !important;
   }

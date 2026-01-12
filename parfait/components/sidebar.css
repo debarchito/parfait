@@ -1,4 +1,4 @@
-/* 
+/*
   Parfait - sidebar.css
   https://github.com/reizumii/parfait
 */
@@ -15,7 +15,7 @@
         --pf-navbar-margin: 0;
         --pf-bookmarks-margin: calc(var(--pf-sidebar-collapsed) + var(--pf-separation));
         --pf-bottombar-padding-inline: 0;
-        
+
         @media -moz-pref("parfait.window.borderless") {
           --pf-bookmarks-margin: calc(var(--pf-sidebar-collapsed) + (var(--pf-separation) * 2));
         }
@@ -118,14 +118,14 @@
     #sidebar-launcher-splitter { display: none !important; }
   }
   #tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
-  
+
   /* sidebar 2 */
   #sidebar-box,
   #sidebar-splitter {
     padding-block-end: var(--pf-browser-separation) !important;
     -moz-window-dragging: no-drag;
     --browser-area-z-index-sidebar: 2;
-    
+
     @media -moz-pref("parfait.toolbar.unified-toolbar") {
       margin-top: calc(var(--pf-browser-separation) - var(--pf-navbar-height)) !important;
       transition: margin-top var(--pf-ts-25);
@@ -173,7 +173,7 @@
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
-    
+
     & > .text {
       margin-inline-end: auto;
     }
@@ -198,7 +198,7 @@
   background-color: transparent !important;
   border-color: transparent !important;
   transition: var(--pf-ts-25);
-  
+
   &:hover {
     width: 50%;
     background-color: color-mix(in srgb, var(--pf-accent-color), transparent) !important;
@@ -230,7 +230,7 @@ moz-button:not([type~="ghost"]):not(:hover) {
 }
 .button-background {
   --button-border-radius: var(--pf-border-radius-sm);
-  
+
   button > & {
     --button-background-color-ghost-hover: var(--pf-toolbar-bgcolor);
     --button-background-color-hover: var(--pf-toolbar-bgcolor);
@@ -244,7 +244,7 @@ moz-button:not([type~="ghost"]):not(:hover) {
 .button-background[type="icon ghost"] > img {
   transition: var(--pf-ts-50);
   transition-timing-function: var(--pf-fx-bounce);
-  
+
   .button-background:active & {
     fill: var(--pf-icon-color-active) !important;
     scale: 0.9;
@@ -266,7 +266,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
   :root:not([chromehidden~="toolbar"], [taskbartab]):has(#tabbrowser-tabs:not([expanded])) {
     --pf-bookmarks-margin: calc(var(--pf-separation) * 2);
-    
+
     /* sidebar */
     #sidebar-main {
       display: flex !important;
@@ -283,11 +283,11 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       box-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0.125)), var(--pf-shadow-md);
       transition: left var(--pf-ts-25);
       transition-timing-function: var(--pf-fx-sidebar);
-      
+
       /* fs: options */
       @media -moz-pref("parfait.bg.accent-color") {
         --pf-sidebar-bgcolor-1: var(--pf-browser-bgcolor);
-        
+
         @media -moz-pref("parfait.bg.gradient") {
           --pf-sidebar-bgcolor-1: linear-gradient(var(--pf-bg-gradient-fade), var(--pf-browser-bgcolor));
         }
@@ -295,7 +295,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       @media -moz-pref("parfait.blur.enabled") {
         backdrop-filter: var(--pf-acrylic-filter);
         --pf-sidebar-bgcolor-1: color-mix(in srgb, var(--pf-sidebar-bgcolor-2), transparent 12%);
-        
+
         @media -moz-pref("parfait.bg.accent-color") and -moz-pref("parfait.bg.gradient") {
           --pf-sidebar-bgcolor-1: linear-gradient(color-mix(in srgb, var(--pf-bg-gradient-fade), transparent 20%), color-mix(in srgb, var(--pf-browser-bgcolor), transparent 20%));
         }
@@ -321,7 +321,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       @media not -moz-pref("parfait.toolbar.unified-sidebar") {
         top: calc(var(--pf-navbar-height) - var(--pf-separation));
         height: calc(100% - var(--pf-navbar-height));
-        
+
         :root:has(.tab-group-editor-panel[panelopen="true"], #tabgroup-preview-panel[panelopen="true"]) & {
           left: var(--pf-separation);
         }
@@ -346,7 +346,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     }
     .tabbrowser-tab {
       max-width: unset !important;
-      
+
       &[pinned] {
         width: unset !important;
       }
@@ -368,7 +368,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           position: unset !important;
           box-shadow: unset !important;
           border-radius: calc(var(--tab-border-radius) - 3px) !important;
-          
+
           &:hover {
             background-color: var(--pf-toolbar-bgcolor-hover) !important;
           }
@@ -404,7 +404,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #tabs-newtab-button,
     #vertical-tabs-newtab-button {
       width: 100% !important;
-      
+
       .toolbarbutton-text {
         display: flex !important;
       }
@@ -434,7 +434,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     --pf-fl-btn-forward-x: calc(var(--pf-sidebar-width) - (var(--pf-toolbaritem-size) * 2) - var(--pf-toolbaritem-gap));
     --pf-fl-btn-reload-x: calc(var(--pf-sidebar-width) - var(--pf-toolbaritem-size));
     --pf-fl-sidebar-width: var(--pf-sidebar-width);
-    
+
     @media (not (-moz-platform: macos)) and (not -moz-pref("parfait.traffic-lights.enabled")) {
       --pf-tl-width: var(--pf-separation);
     }
@@ -451,7 +451,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       margin-left: var(--pf-separation);
       transition: top var(--pf-ts-25) var(--pf-navbar-delay) !important;
       z-index: 4;
-      
+
       @media not -moz-pref("parfait.window.borderless") {
         &::after {
           content: "";
