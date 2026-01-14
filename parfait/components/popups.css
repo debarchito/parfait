@@ -362,7 +362,7 @@ panel toolbarseparator {
     &:hover {
       background-color: var(--pf-toolbar-bgcolor-hover);
     }
-    .chevron-icon {
+    &::before {
       background-image: var(--pf-icon-chevron-down) !important;
       opacity: 0.6;
       margin-inline: auto 4px !important;

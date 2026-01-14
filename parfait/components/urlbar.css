@@ -455,6 +455,7 @@
   .searchmode-switcher-title {
     font-size: 12px;
     font-weight: 600;
+    --urlbar-searchmodeswitcher-inline-padding: 0;
   }
   #urlbar[open] & {
     padding-inline: 12px !important;
