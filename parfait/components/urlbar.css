@@ -11,17 +11,16 @@
 
   .urlbar-background {
     border: 0 !important;
-    border-radius: var(--pf-border-radius-md) !important;
-    transition: background-color var(--pf-ts-25);
+    outline: none !important;
     --toolbar-field-background-color: var(--pf-toolbar-bgcolor);
+    --toolbarbutton-border-radius: var(--pf-border-radius-md);
 
+    #urlbar:not([focused]) & {
+      transition: background-color var(--pf-ts-25);
+    }
     #urlbar:hover & {
       --toolbar-field-background-color: var(--pf-toolbar-bgcolor-hover);
     }
-  }
-  &[focused] .urlbar-background {
-    box-shadow: inset 0 0 0 1px var(--pf-accent-color), 0 0 0 2px color-mix(in srgb, var(--pf-accent-color), transparent 50%) !important;
-    outline: none !important;
   }
 }
 :root:not([customizing]) {
@@ -113,11 +112,11 @@
     --inactive-titlebar-opacity: 1;
 
     .urlbar-background {
-      border-radius: var(--pf-urlbar-fl-radius) !important;
       box-shadow: var(--pf-urlbar-border), var(--pf-shadow-lg) !important;
       border: 0 !important;
       transition: none !important;
       --toolbar-field-focus-background-color: var(--pf-urlbar-bgcolor);
+      --toolbarbutton-border-radius: var(--pf-urlbar-fl-radius);
     }
     @media -moz-pref("parfait.blur.enabled") {
       backdrop-filter: var(--pf-acrylic-filter);
