@@ -206,10 +206,6 @@
 }
 
 /* bottom strip */
-:root {
-  --pf-bottombar-padding-inline: var(--pf-browser-separation);
-  --pf-bottombar-padding-block-end: var(--pf-browser-separation);
-}
 .tools-and-extensions.actions-list.overflow-button {
   display: none !important;
 }
@@ -221,8 +217,8 @@
     width: 100%;
     justify-content: space-between !important;
     box-sizing: border-box;
-    padding-inline: var(--pf-bottombar-padding-inline) !important;
-    padding-block-end: var(--pf-bottombar-padding-block-end) !important;
+    padding-inline: var(--pf-browser-separation) !important;
+    padding-block-end: var(--pf-browser-separation) !important;
   }
 }
 moz-button:not([type~="ghost"]):not(:hover) {
@@ -230,15 +226,6 @@ moz-button:not([type~="ghost"]):not(:hover) {
 }
 .button-background {
   --button-border-radius: var(--pf-border-radius-sm);
-
-  button > & {
-    --button-background-color-ghost-hover: var(--pf-toolbar-bgcolor);
-    --button-background-color-hover: var(--pf-toolbar-bgcolor);
-  }
-  button:hover:active:not(:disabled) > & {
-    --button-background-color-ghost-active: var(--pf-toolbar-bgcolor-active);
-    --button-background-color-active: var(--pf-toolbar-bgcolor-active);
-  }
 }
 /* sidebar buttons animation */
 .button-background[type="icon ghost"] > img {

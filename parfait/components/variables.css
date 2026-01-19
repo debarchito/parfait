@@ -205,6 +205,8 @@
   --button-background-color: var(--pf-toolbar-bgcolor) !important;
   --button-background-color-hover: var(--pf-toolbar-bgcolor-hover) !important;
   --button-background-color-active: var(--pf-toolbar-bgcolor-active) !important;
+  --button-background-color-ghost-hover: var(--pf-toolbar-bgcolor) !important;
+  --button-background-color-ghost-active: var(--pf-toolbar-bgcolor-active) !important;
   --toolbox-textcolor: var(--pf-text-color) !important;
   --toolbox-textcolor-inactive: var(--pf-text-color-inactive) !important;
   --toolbar-field-color: var(--pf-text-color) !important;
