@@ -43,19 +43,17 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   }
 }
 #fxa-avatar-label { display: none }
-/* set positioning */
+
+/* toolbar */
 #navigator-toolbox {
+  margin-top: 0 !important;
   z-index: unset !important;
 }
-#toolbar-menubar,
-#nav-bar {
-  z-index: 2;
-}
-/* ti: align toolbar items */
 #nav-bar {
   min-height: var(--pf-navbar-height) !important;
   padding-inline-start: var(--pf-separation) !important;
   align-items: center;
+  z-index: 2;
 
   @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
     :root:not([macOSNativeFullscreen]) & { padding-inline-start: 0 !important; }
@@ -120,9 +118,8 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 
     &::before {
       content: "";
-      min-width: var(--pf-sidebar-width);
-      max-width: var(--pf-sidebar-width);
-      min-height: var(--pf-navbar-height);
+      width: var(--pf-sidebar-width);
+      height: var(--pf-navbar-height);
       position: fixed;
       top: 0;
       left: 0;
@@ -146,10 +143,6 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     border: 1px solid var(--pf-border-color) !important;
     box-shadow: var(--pf-shadow-md);
     padding: 4px !important;
-
-    & .titlebar-buttonbox-container {
-      display: none;
-    }
   }
 
   /* bookmarks toolbar */
