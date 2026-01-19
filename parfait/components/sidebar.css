@@ -346,22 +346,25 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           margin-inline-end: 10px;
         }
         .tab-close-button {
-          display: none !important;
           width: 24px !important;
           height: 24px !important;
           margin-inline-end: calc(var(--tab-close-button-padding) / -2) !important;
           padding: var(--tab-close-button-padding) !important;
           background: transparent !important;
           position: unset !important;
-          box-shadow: unset !important;
-          border-radius: calc(var(--tab-border-radius) - 3px) !important;
+          --tab-selected-shadow: none;
+          --border-radius-circle: var(--pf-border-radius-sm);
 
           &:hover {
             background-color: var(--pf-toolbar-bgcolor-hover) !important;
           }
         }
-        &:hover .tab-close-button {
+        .tab-icon-overlay[soundplaying] {
+          display: none;
+        }
+        .tab-audio-button[soundplaying] {
           display: flex !important;
+          margin-left: 2px;
         }
       }
     }
@@ -370,23 +373,13 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       max-width: unset !important;
       font-size-adjust: unset !important;
     }
-    .tab-icon-overlay[soundplaying] {
-      display: none;
-    }
-    .tab-audio-button[soundplaying] {
-      display: flex !important;
-      margin-left: 2px;
-    }
     .tab-group-label-container,
     .tab-group-line {
       --dragover-tab-group-color: transparent;
       --tab-group-line-color: transparent;
     }
-    #tabbrowser-tabs {
-      tab-group > .tabbrowser-tab,
-      &[movingtab][movingtab-addToGroup]:not([movingtab-group], [movingtab-ungroup]) .tabbrowser-tab:is(:active, [multiselected]) {
-        margin-inline-start: 18px !important;
-      }
+    tab-group > .tabbrowser-tab {
+      margin-inline-start: 14px !important;
     }
     #tabs-newtab-button,
     #vertical-tabs-newtab-button {

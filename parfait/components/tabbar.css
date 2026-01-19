@@ -220,7 +220,7 @@ spacer[part="overflow-end-indicator"],
   /* tabs: hide close button */
   .tabbrowser-tab:not([pinned]) {
     .tab-close-button { display: none !important; }
-    &:is(:hover) .tab-close-button { display: block !important; }
+    &:hover .tab-close-button { display: flex !important; }
   }
   /* icons: rounded favicons */
   .tab-icon-image {
