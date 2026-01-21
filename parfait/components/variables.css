@@ -11,7 +11,6 @@
   --pf-tab-height: 36px;
   --pf-pinned-height: 48px;
   --pf-sidebar-width: 240px;
-  --pf-sidebar-collapsed: 52px;
   --pf-navbar-padding-block: 7px;
   --pf-toolbaritem-size: 32px;
   --pf-toolbaritem-gap: 2px;
@@ -20,6 +19,7 @@
   --pf-urlbar-input-height: 56px;
   --pf-urlbar-sr-height: 48px;
   --pf-bookmarks-height: 40px;
+  --pf-tab-group-indent: 18px;
   --pf-separation: 8px;
   --pf-browser-separation: 10px;
   --pf-fl-trigger-width: 12px;
@@ -60,8 +60,8 @@
   --pf-toolbar-bgcolor-inactive: light-dark(rgba(0, 0, 0, 0.04), rgba(248, 248, 248, 0.075));
   --pf-urlbar-bgcolor: light-dark(white, #191a1a);
   --pf-urlbar-bgcolor-transparent: light-dark(rgba(255, 255, 255, 0.875), rgba(25, 26, 26, 0.875));
-  --pf-border-color: color-mix(in srgb, currentColor, transparent 87%);
-  --pf-border-color-light: color-mix(in srgb, currentColor, transparent 92%);
+  --pf-border-color: color-mix(in srgb, light-dark(black, white), transparent 87%);
+  --pf-border-color-light: color-mix(in srgb, light-dark(black, white), transparent 92%);
 
   /* shadows */
   --pf-urlbar-border: inset 0 0 0 1px light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15)), 0 0 0 1px light-dark(rgba(0, 0, 0, 0.0125), black);
@@ -102,7 +102,7 @@
 
   /* density: compact mode */
   &[uidensity="compact"] {
-    --pf-tab-height: 30px;
+    --pf-tab-height: 32px;
     --pf-pinned-height: 40px;
     --pf-toolbaritem-size: 28px;
     --pf-urlbar-height: 32px;

@@ -100,8 +100,6 @@
   /* main sidebar */
   @media -moz-pref("parfait.toolbar.unified-sidebar") {
     #sidebar-main {
-      width: var(--pf-sidebar-collapsed);
-
       &:has(#tabbrowser-tabs[expanded]) {
         width: var(--pf-sidebar-width) !important;
         transition: width var(--pf-ts-25), transform var(--pf-ts-25) !important;
@@ -117,7 +115,7 @@
     .wrapper { width: 100% !important; }
     #sidebar-launcher-splitter { display: none !important; }
   }
-  #tabbrowser-tabs[orient="vertical"] { grid-gap: 2px !important; }
+  #tabbrowser-tabs[orient="vertical"] { grid-gap: var(--tab-block-margin) !important; }
 
   /* sidebar 2 */
   #sidebar-box,
@@ -195,6 +193,7 @@
 #sidebar-tools-and-extensions-splitter {
   width: 20px;
   margin-inline: auto !important;
+  margin-block-end: -2px;
   background-color: transparent !important;
   border-color: transparent !important;
   transition: var(--pf-ts-25);
