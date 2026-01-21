@@ -12,7 +12,7 @@
   --tab-inline-padding: calc(var(--pf-separation) + (var(--tab-min-height) - var(--icon-size)) / 2) !important;
   --tab-icon-end-margin: calc((var(--tab-min-height) - var(--icon-size)) / 2) !important;
   --tab-new-tab-border-width: calc(100% - (var(--tab-inner-inline-margin) * 2));
-  
+
   &:not([expanded]) {
     width: 100% !important;
   }
@@ -39,7 +39,7 @@
   }
   #vertical-tabs-newtab-button {
     margin-top: calc(var(--tab-block-margin) * 2) !important;
-    
+
     &::before {
       content: "";
       width: calc(100% + (var(--tab-inner-inline-margin) * 2));
@@ -172,6 +172,7 @@ spacer[part="overflow-end-indicator"],
 /* tabs: pins */
 #pinned-tabs-container[orient="vertical"] {
   --tab-pinned-margin-inline-expanded: calc(var(--tab-block-margin) * 2);
+  --tab-pinned-min-width-expanded: 56px;
 
   @media not -moz-pref("sidebar.visibility", "expand-on-hover") {
     #sidebar-main[hidden] &,
@@ -179,7 +180,7 @@ spacer[part="overflow-end-indicator"],
       margin: calc(0px - var(--tab-block-margin));
       --tab-min-height: var(--pf-pinned-height);
       --tab-height-with-margin-padding: calc(var(--pf-pinned-height) + (var(--tab-block-margin) * 4));
-      
+
       .tab-background {
         --tab-block-margin: var(--tab-pinned-margin-inline-expanded);
         --tab-inner-inline-margin: var(--tab-pinned-margin-inline-expanded);
@@ -279,7 +280,7 @@ spacer[part="overflow-end-indicator"],
   .tab-group-label-container {
     margin: var(--tab-block-margin) var(--tab-inner-inline-margin) !important;
     padding-block-end: 0 !important;
-    
+
     #tabbrowser-tabs[orient="vertical"] tab-group:not([collapsed]) > &::after {
       inset-inline-start: calc(var(--tab-group-line-thickness) - var(--tab-inner-inline-margin)) !important;
     }
