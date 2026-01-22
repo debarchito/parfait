@@ -87,10 +87,10 @@
   --pf-sidebar-margin: calc(var(--pf-urlbar-height) + var(--pf-separation) - var(--tab-block-margin));
   --pf-navbar-height: calc(var(--pf-toolbaritem-size) + (var(--pf-navbar-padding-block) * 2));
   --pf-navbar-margin: calc(var(--pf-browser-separation) - var(--pf-navbar-height));
-  --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + var(--pf-separation));
-  --pf-fl-trigger-sum: calc(var(--pf-separation) + var(--pf-fl-trigger-width));
+  --pf-bookmarks-margin: calc(var(--pf-sidebar-width) + (var(--pf-separation) * var(--pf-bookmarks-sm)));
 
   /* other */
+  --pf-bookmarks-sm: 1;
   --pf-background-filter: blur(8px);
   --pf-acrylic-filter: blur(72px) brightness(1.6) saturate(1.4);
 
@@ -167,6 +167,7 @@
   /* borderless */
   @media -moz-pref("parfait.window.borderless") {
     --pf-navbar-margin: calc(0px - var(--pf-navbar-height));
+    --pf-bookmarks-sm: 2;
   }
 
   /* animation */
