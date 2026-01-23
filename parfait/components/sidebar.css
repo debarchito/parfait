@@ -306,6 +306,17 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       margin-inline: 0 var(--pf-browser-separation) !important;
     }
     /* display tab contents */
+    #pinned-tabs-container[orient="vertical"] {
+      margin: calc(0px - var(--tab-block-margin));
+      padding-inline: calc(var(--tab-block-margin) * 3) !important;
+      --tab-min-height: var(--pf-pinned-height);
+      --tab-height-with-margin-padding: calc(var(--pf-pinned-height) + (var(--tab-block-margin) * 4));
+
+      .tab-background {
+        --tab-block-margin: var(--tab-pinned-margin-inline-expanded);
+        --tab-inner-inline-margin: var(--tab-pinned-margin-inline-expanded);
+      }
+    }
     .tab-background {
       width: unset !important;
     }
@@ -321,7 +332,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
         }
         .tab-throbber,
         &:not([soundplaying]) .tab-icon-image {
-          margin-inline-end: 10px;
+          margin-inline-end: var(--tab-icon-end-margin);
         }
         .tab-close-button {
           width: 24px !important;
@@ -347,8 +358,6 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       }
     }
     .tab-group-label {
-      width: unset !important;
-      max-width: unset !important;
       font-size-adjust: unset !important;
     }
     .tab-group-label-container,
@@ -357,7 +366,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       --tab-group-line-color: transparent;
     }
     tab-group > .tabbrowser-tab {
-      margin-inline-start: 14px !important;
+      margin-inline-start: var(--pf-tab-group-indent) !important;
     }
     #tabs-newtab-button,
     #vertical-tabs-newtab-button {

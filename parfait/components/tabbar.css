@@ -175,7 +175,6 @@ spacer[part="overflow-end-indicator"],
   --tab-pinned-min-width-expanded: 56px;
 
   @media not -moz-pref("sidebar.visibility", "expand-on-hover") {
-    #sidebar-main[hidden] &,
     #tabbrowser-tabs[expanded] & {
       margin: calc(0px - var(--tab-block-margin));
       --tab-min-height: var(--pf-pinned-height);
@@ -185,9 +184,6 @@ spacer[part="overflow-end-indicator"],
         --tab-block-margin: var(--tab-pinned-margin-inline-expanded);
         --tab-inner-inline-margin: var(--tab-pinned-margin-inline-expanded);
       }
-    }
-    #sidebar-main[hidden] & {
-      padding-inline: calc(var(--tab-block-margin) * 3) !important;
     }
   }
   .tabbrowser-tab:not(:hover) > .tab-stack > .tab-background:not([selected], [multiselected]) {
@@ -249,7 +245,7 @@ spacer[part="overflow-end-indicator"],
     /* tg: tabs */
     & > .tabbrowser-tab {
       max-height: calc(var(--tab-min-height) + (var(--tab-block-margin) * 2));
-      transition-property: min-height, max-height, opacity !important;
+      transition-property: min-height, max-height, opacity, transform !important;
       transition-duration: var(--pf-ts-15) !important;
     }
     &[collapsed] > .tabbrowser-tab:not([selected]) {
@@ -272,9 +268,6 @@ spacer[part="overflow-end-indicator"],
     }
     &[movingtab]:is([movingtab-addToGroup], [movingtab-ungroup]) .tabbrowser-tab:is([multiselected], [selected]) {
       transition: margin var(--pf-ts-15), width var(--pf-ts-15) !important;
-    }
-    &[movingtab] tab-group > .tabbrowser-tab {
-      transition-property: min-height, max-height, opacity, transform !important;
     }
   }
   .tab-group-label-container {
