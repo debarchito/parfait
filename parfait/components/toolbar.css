@@ -90,15 +90,11 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   }
   #reload-button,
   #stop-button {
-    opacity: 1 !important;
-
     & > .toolbarbutton-icon {
-      animation: bounce var(--pf-ts-25);
-      background-color: transparent !important;
+      fill: var(--toolbarbutton-icon-fill) !important;
+      animation: bounce var(--pf-ts-25) var(--pf-fx-bounce);
     }
-    .toolbarbutton-animatable-image {
-      --anim-steps: 0 !important;
-    }
+    .toolbarbutton-animatable-box { display: none !important; }
   }
 }
 @keyframes bounce {
