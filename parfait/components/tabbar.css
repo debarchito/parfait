@@ -229,7 +229,7 @@ spacer[part="overflow-end-indicator"],
     --pf-folder-color-1: var(--toolbar-bgcolor);
     --pf-folder-color-2: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%);
     --pf-folder-color-bg: color-mix(in srgb, var(--pf-folder-color-1), light-dark(white, black) 95%);
-    --pf-folder-color-fg: light-dark(color-mix(in srgb, var(--pf-folder-color-2), black 40%), color-mix(in srgb, var(--pf-folder-color-2), white 40%));
+    --pf-folder-color-fg: color-mix(in srgb, var(--pf-folder-color-2), light-dark(black, white) 40%);
     --tab-group-line-color: color-mix(in srgb, var(--toolbar-color), var(--toolbar-bgcolor) 50%) !important;
 
     @media -moz-pref("parfait.bg.accent-color") {
