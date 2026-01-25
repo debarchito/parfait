@@ -199,6 +199,8 @@
   --border-radius-medium: var(--pf-border-radius-md) !important;
   --urlbar-icon-border-radius: var(--pf-border-radius-sm) !important;
 
+  --chrome-content-separator-color: transparent !important;
+  --sidebar-border-color: transparent !important;
   --focus-outline-color: color-mix(in srgb, var(--pf-accent-color), transparent 40%) !important;
   --urlbar-box-bgcolor: transparent !important;
   --urlbar-box-focus-bgcolor: transparent !important;

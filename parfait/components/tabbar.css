@@ -5,6 +5,7 @@
 
 /* tabs: layout */
 #tabbrowser-tabs[orient="vertical"] {
+  grid-gap: var(--tab-block-margin) !important;
   --tab-min-height: var(--pf-tab-height) !important;
   --tab-collapsed-background-width: var(--pf-tab-height);
   --tab-inner-inline-margin: var(--pf-separation) !important;

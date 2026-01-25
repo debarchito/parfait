@@ -53,7 +53,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   min-height: var(--pf-navbar-height) !important;
   padding-inline-start: var(--pf-separation) !important;
   align-items: center;
-  z-index: 2;
+  will-change: unset !important;
 
   @media -moz-pref("parfait.traffic-lights.enabled") or (-moz-platform: macos) {
     :root:not([macOSNativeFullscreen]) & { padding-inline-start: 0 !important; }
@@ -62,9 +62,6 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 #nav-bar-customization-target {
   align-items: center;
   gap: var(--pf-toolbaritem-gap);
-}
-#PanelUI-button {
-  align-items: center;
 }
 #PanelUI-menu-button {
   margin-inline-end: var(--toolbar-start-end-padding) !important;
