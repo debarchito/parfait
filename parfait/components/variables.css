@@ -94,12 +94,6 @@
   --pf-background-filter: blur(8px);
   --pf-acrylic-filter: blur(72px) brightness(1.6) saturate(1.4);
 
-  /* horizontal layout */
-  @media not -moz-pref("sidebar.verticalTabs") {
-    --pf-tl-padding-left: 16px;
-    --pf-tl-padding-right: 10px;
-  }
-
   /* density: compact mode */
   &[uidensity="compact"] {
     --pf-tab-height: 32px;
@@ -112,6 +106,15 @@
   &[uidensity="touch"] {
     --pf-tab-height: 40px;
     --pf-toolbaritem-size: 34px;
+  }
+
+  /* horizontal layout */
+  @media not -moz-pref("sidebar.verticalTabs") {
+    --pf-tab-height: 32px;
+    --pf-toolbaritem-size: 32px;
+    --pf-urlbar-height: 32px;
+    --pf-tl-padding-left: 16px;
+    --pf-tl-padding-right: 10px;
   }
 
   /* popup windows and taskbar tabs */
