@@ -5,7 +5,7 @@
 
 /* top bar */
 @media -moz-pref("sidebar.verticalTabs") {
-  .browserContainer, #sidebar-box, #sidebar-splitter {
+  #tabbrowser-tabbox, #sidebar-box, #sidebar-splitter {
     transition: margin-top var(--pf-ts-25);
     transition-delay: var(--pf-navbar-delay) !important;
   }
@@ -39,7 +39,7 @@
       }
     }
     &:has(#nav-bar toolbarbutton[open]:not(#urlbar-searchmode-switcher), #nav-bar:hover,
-    #downloads-button[notification]:not([hidden])) :where(.browserContainer, #sidebar-box, #sidebar-splitter) {
+    #downloads-button[notification]:not([hidden])) :where(#tabbrowser-tabbox, #sidebar-box, #sidebar-splitter) {
       margin-top: 0 !important;
       --pf-navbar-delay: 0s;
       --pf-navbar-margin-reverse: calc(var(--pf-browser-separation) - var(--pf-navbar-height));
@@ -47,8 +47,8 @@
     /* auto hide navbar */
     @media -moz-pref("parfait.toolbar.unified-sidebar") {
       &:not([inDOMFullscreen]):has(:is(.titlebar-buttonbox-container, #urlbar, #sidebar-button, #back-button, #forward-button,
-        #stop-reload-button, #vertical-spacer):hover) :is(.browserContainer, #sidebar-box, #sidebar-splitter),
-      &:not([inDOMFullscreen]) :is(.browserContainer, #sidebar-box, #sidebar-splitter) {
+        #stop-reload-button, #vertical-spacer):hover) :is(#tabbrowser-tabbox, #sidebar-box, #sidebar-splitter),
+      &:not([inDOMFullscreen]) :is(#tabbrowser-tabbox, #sidebar-box, #sidebar-splitter) {
         margin-top: var(--pf-navbar-margin) !important;
         --pf-navbar-margin-reverse: 0;
       }
