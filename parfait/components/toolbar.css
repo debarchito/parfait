@@ -46,12 +46,14 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
 
 /* toolbar */
 #navigator-toolbox {
+  border-bottom: 0 !important;
   margin-top: 0 !important;
   z-index: unset !important;
 }
 #nav-bar {
   min-height: var(--pf-navbar-height) !important;
   padding-inline-start: var(--pf-separation) !important;
+  border-top: 0 !important;
   align-items: center;
   will-change: unset !important;
 
@@ -64,7 +66,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   gap: var(--pf-toolbaritem-gap);
 }
 #PanelUI-menu-button {
-  margin-inline-end: var(--toolbar-start-end-padding) !important;
+  margin-inline: var(--pf-toolbaritem-gap) var(--toolbar-start-end-padding) !important;
 }
 
 /* hide sidebar active state */
@@ -81,8 +83,7 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
     transform: translateX(2px);
   }
   #reload-button:not([disabled]) {
-    transition: all var(--pf-ts-15);
-    transition-timing-function: var(--pf-fx-bounce);
+    transition: all var(--pf-ts-15) var(--pf-fx-bounce);
 
     &:hover:active .toolbarbutton-icon {
       transform: rotate(90deg);
