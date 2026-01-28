@@ -428,6 +428,7 @@
 #urlbar-searchmode-switcher {
   margin: 2px 0 2px 2px !important;
   padding: var(--urlbar-searchmodeswitcher-inline-padding) !important;
+  border-radius: var(--urlbar-inner-border-radius) !important;
   --urlbar-box-bgcolor: transparent;
   --urlbar-box-focus-bgcolor: transparent;
 
@@ -471,7 +472,7 @@
     transition: var(--pf-ts-15);
   }
   &:hover .searchmode-switcher-close {
-    width: 16px !important;
+    width: var(--icon-size) !important;
     margin-inline: 4px -4px !important;
     opacity: 1;
   }

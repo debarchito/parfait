@@ -197,6 +197,7 @@ moz-button:not([type~="ghost"]):not(:hover) {
   --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-hover);
 }
 .button-background {
+  --button-size-icon: var(--pf-toolbaritem-size);
   --button-border-radius: var(--pf-border-radius-sm);
 }
 /* sidebar buttons animation */
