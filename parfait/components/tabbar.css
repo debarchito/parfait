@@ -4,9 +4,13 @@
 */
 
 /* tabs: layout */
+#tabbrowser-tabs[orient="horizontal"] {
+  --tab-min-height: var(--pf-tab-height);
+  --tab-block-margin: var(--pf-navbar-padding-block);
+}
 #tabbrowser-tabs[orient="vertical"] {
   grid-gap: var(--tab-block-margin) !important;
-  --tab-min-height: var(--pf-tab-height) !important;
+  --tab-min-height: var(--pf-tab-height);
   --tab-collapsed-background-width: var(--pf-tab-height);
   --tab-inner-inline-margin: var(--pf-separation) !important;
   --tab-collapsed-width: calc(var(--tab-collapsed-background-width) + 2 * var(--tab-inner-inline-margin));
@@ -14,9 +18,6 @@
   --tab-icon-end-margin: calc((var(--tab-min-height) - var(--icon-size)) / 2) !important;
   --tab-new-tab-border-width: calc(100% - (var(--tab-inner-inline-margin) * 2));
 
-  &:not([expanded]) {
-    width: 100% !important;
-  }
   .tabbrowser-tab {
     padding-block: 0 !important;
   }
@@ -151,10 +152,10 @@ spacer[part="overflow-end-indicator"],
       }
     }
   }
-  .tab-background[selected] {
+  #tabbrowser-tabs[orient="vertical"] & .tab-background[selected] {
     animation: tab-select var(--pf-ts-25) var(--pf-fx-bounce);
   }
-  .tab-stack {
+  #tabbrowser-tabs[orient="vertical"] & .tab-stack {
     transition: scale var(--pf-ts-15);
 
     &:hover:active:not(:has(.tab-audio-button:active, .tab-close-button:active)) {

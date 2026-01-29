@@ -140,38 +140,40 @@ toolbar .toolbarbutton-1:not(#PlacesChevron, .toolbarbutton-combined-buttons-dro
   }
 
   /* bookmarks toolbar */
-  #PersonalToolbar {
-    position: fixed;
-    bottom: calc(0px - var(--pf-bookmarks-height));
-    right: var(--pf-separation);
-    z-index: 3;
-    width: calc(100% - var(--pf-bookmarks-margin));
-    height: var(--pf-bookmarks-height);
-    padding: 4px !important;
-    background-color: var(--pf-panel-bgcolor) !important;
-    border: 1px solid var(--pf-border-color) !important;
-    border-radius: var(--pf-border-radius-md);
-    box-shadow: var(--pf-shadow-md);
-    overflow: unset !important;
-    opacity: 0;
-    transition: var(--pf-ts-25) !important;
-    transition-delay: var(--pf-ts-25) !important;
+  @media -moz-pref("sidebar.verticalTabs") {
+    #PersonalToolbar {
+      position: fixed;
+      bottom: calc(0px - var(--pf-bookmarks-height));
+      right: var(--pf-separation);
+      z-index: 3;
+      width: calc(100% - var(--pf-bookmarks-margin));
+      height: var(--pf-bookmarks-height);
+      padding: 4px !important;
+      background-color: var(--pf-panel-bgcolor) !important;
+      border: 1px solid var(--pf-border-color) !important;
+      border-radius: var(--pf-border-radius-md);
+      box-shadow: var(--pf-shadow-md);
+      overflow: unset !important;
+      opacity: 0;
+      transition: var(--pf-ts-25) !important;
+      transition-delay: var(--pf-ts-25) !important;
 
-    &:hover,
-    &:has(.bookmark-item[open]) {
-      opacity: 1;
-      bottom: var(--pf-separation);
+      &:hover,
+      &:has(.bookmark-item[open]) {
+        opacity: 1;
+        bottom: var(--pf-separation);
+      }
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: var(--pf-browser-separation);
+        position: absolute;
+        left: 0;
+      }
+      &::before { top: calc(0px - var(--pf-browser-separation)); }
+      &::after { bottom: calc(0px - var(--pf-browser-separation)); }
     }
-    &::before,
-    &::after {
-      content: "";
-      width: 100%;
-      height: var(--pf-browser-separation);
-      position: absolute;
-      left: 0;
-    }
-    &::before { top: calc(0px - var(--pf-browser-separation)); }
-    &::after { bottom: calc(0px - var(--pf-browser-separation)); }
   }
 }
 toolbarbutton.bookmark-item:not(.subviewbutton) {

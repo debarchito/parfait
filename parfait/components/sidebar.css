@@ -192,6 +192,12 @@
     padding-inline: var(--pf-browser-separation) !important;
     padding-block-end: var(--pf-browser-separation) !important;
   }
+  button {
+    --button-outer-padding-inline: 0;
+    --button-outer-padding-block: 0;
+    --button-outer-padding-block-start: 0;
+    --button-outer-padding-block-end: 0;
+  }
 }
 moz-button:not([type~="ghost"]):not(:hover) {
   --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-hover);
@@ -218,12 +224,6 @@ img[src="chrome://browser/skin/synced-tabs.svg"] {
 }
 img[src="chrome://browser/skin/sidebar-collapsed.svg"] {
   content: var(--pf-icon-sidebar);
-}
-button {
-  --button-outer-padding-inline: 0;
-  --button-outer-padding-block: 0;
-  --button-outer-padding-block-start: 0;
-  --button-outer-padding-block-end: 0;
 }
 /* bottom strip: icon alignment */
 moz-button[view="viewCustomizeSidebar"] { order: 99; }

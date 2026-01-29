@@ -60,8 +60,8 @@
   &[fxastatus="not_configured"] {
     --avatar-image-url: var(--pf-icon-avatar) !important;
   }
-
-  /* taskbar tabs */
+  /* horizontal layout & taskbar tabs */
+  #navigator-toolbox:not([tabs-hidden]),
   &[taskbartab] {
     #back-button {
       list-style-image: url(chrome://global/skin/icons/arrow-left.svg) !important;
