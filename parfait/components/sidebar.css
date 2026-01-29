@@ -232,8 +232,9 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
 @media -moz-pref("sidebar.verticalTabs") and -moz-pref("sidebar.visibility", "hide-sidebar") {
   :root:not([chromehidden~="toolbar"], [taskbartab]):has(#tabbrowser-tabs:not([expanded])) {
     --pf-bookmarks-margin: calc(var(--pf-separation) * 2);
-    --pf-fl-sidebar-width: calc(var(--pf-sidebar-width));
+    --pf-sidebar-shadow: var(--pf-sidebar-border), var(--pf-shadow-md);;
     --pf-fl-separation: 0px;
+    --pf-fl-sidebar-width: var(--pf-sidebar-width);
 
     /* sidebar */
     #sidebar-main {
@@ -248,8 +249,9 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
       padding-top: var(--pf-separation);
       background: var(--pf-sidebar-bgcolor-1);
       border-radius: var(--pf-browser-radius);
-      box-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, 0.075), rgba(255, 255, 255, 0.125)), var(--pf-shadow-md);
-      transition: left var(--pf-ts-25);
+      box-shadow: var(--pf-fl-sidebar-shadow, none);
+      transition-property: left, box-shadow;
+      transition-duration: var(--pf-ts-25);
       transition-timing-function: var(--pf-fx-sidebar);
 
       /* fs: options */
@@ -283,6 +285,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     &:has(#sidebar-main:hover, .tabbrowser-tab[multiselected]:not([selected]), #tabContextMenu:hover, :is(.tab-group-editor-panel, #tabgroup-preview-panel)[panelopen="true"]) {
       --pf-fl-sidebar-width: 0px;
       --pf-fl-separation: var(--pf-separation);
+      --pf-fl-sidebar-shadow: var(--pf-sidebar-shadow);
     }
     /* fs: separation */
     &:not([inDOMFullscreen]) #tabbrowser-tabbox {
@@ -334,6 +337,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
           background: transparent !important;
           position: unset !important;
           --tab-selected-shadow: none;
+          --tab-selected-outline-color: transparent;
           --border-radius-circle: var(--pf-border-radius-sm);
 
           &:hover {
@@ -423,6 +427,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
         --pf-fl-navbar-y: calc(var(--pf-browser-separation) - var(--pf-navbar-height)) !important;
         --pf-fl-sidebar-width: 0px;
         --pf-fl-separation: var(--pf-separation);
+        --pf-fl-sidebar-shadow: var(--pf-sidebar-shadow);
       }
     }
     /* fus: move toolbar items */
@@ -470,6 +475,7 @@ moz-button[view="viewCustomizeSidebar"] { order: 99; }
     #urlbar:not([open]) :is(:hover, :is(#tracking-protection-icon-container, .identity-box-button, .urlbar-page-action, #notification-popup-box)[open])) {
       --pf-fl-sidebar-width: 0px;
       --pf-fl-separation: var(--pf-separation);
+        --pf-fl-sidebar-shadow: var(--pf-sidebar-shadow);
     }
   }
 }
