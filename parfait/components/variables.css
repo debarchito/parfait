@@ -78,7 +78,7 @@
   --pf-tl-min-color: #febc2e;
   --pf-tl-max-color: #28c840;
   --pf-tl-close-color: #ff5f57;
-  --pf-tl-border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
+  --pf-tl-border: rgba(0, 0, 0, 0.1);
   --pf-tl-mono: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.15));
 
   /* calc */
