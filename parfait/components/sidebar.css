@@ -100,22 +100,25 @@
   /* sidebar 2 */
   #sidebar-box,
   #sidebar-splitter {
-    padding-block-end: var(--pf-browser-separation) !important;
     --browser-area-z-index-sidebar: 2;
-    --border-radius-medium: var(--pf-browser-radius);
     -moz-window-dragging: no-drag;
+  }
+}
+#sidebar-box,
+#sidebar-splitter {
+  padding-block-end: var(--pf-browser-separation) !important;
+  --border-radius-medium: var(--pf-browser-radius);
 
-    @media -moz-pref("parfait.window.borderless") {
-      --pf-browser-separation: 0px;
-      --pf-browser-radius: 0;
-      --space-medium: 4px;
-      --content-area-shadow: none;
-    }
+  @media -moz-pref("parfait.window.borderless") {
+    --pf-browser-separation: 0px;
+    --pf-browser-radius: 0;
+    --space-medium: 4px;
+    --content-area-shadow: none;
   }
-  #sidebar-splitter {
-    width: var(--pf-browser-separation) !important;
-    margin-bottom: var(--pf-browser-separation) !important;
-  }
+}
+#sidebar-splitter {
+  width: var(--pf-browser-separation) !important;
+  margin-bottom: var(--pf-browser-separation) !important;
 }
 
 /* customize sidebar */
@@ -182,11 +185,15 @@
   display: none !important;
 }
 .buttons-wrapper {
-  min-height: 0 !important;
+  height: unset !important;
+}
+.tools-and-extensions {
+  overflow: unset !important;
 }
 @media -moz-pref("sidebar.verticalTabs") {
   .tools-and-extensions {
     width: 100%;
+    height: 100% !important;
     justify-content: space-between !important;
     box-sizing: border-box;
     padding-inline: var(--pf-browser-separation) !important;
@@ -199,7 +206,10 @@
     --button-outer-padding-block-end: 0;
   }
 }
-moz-button:not([type~="ghost"]):not(:hover) {
+.actions-list > moz-button {
+  visibility: visible !important;
+}
+.actions-list > moz-button:not([type~="ghost"]):not(:hover) {
   --toolbarbutton-active-background: var(--pf-toolbar-bgcolor-hover);
 }
 .button-background {
